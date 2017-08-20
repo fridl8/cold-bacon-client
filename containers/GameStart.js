@@ -40,12 +40,12 @@ export default class GameStartFetch extends Component {
 
 		const { navigate } = this.props.navigation;
 		return (
-			<View>
-				<View>
+			<View style={styles.viewFlex}>
+				<View style={styles.startingView}>
 					<ClickableImage text={{uri: 'https://image.tmdb.org/t/p/w185/'+this.state.actors.starting_actor.image_url}} onPress={() => navigate('GameplayScreen', { game_id: this.state.actors.game_id, traceable_id: this.state.actors.starting_actor.id, traceable_type: 'Actor'} )} />
 				</View>
-				<View>
-					<Image source={{uri: 'https://image.tmdb.org/t/p/w185/'+this.state.actors.ending_actor.image_url}} style={{width:40, height:40}} />
+				<View style={styles.endingView}>
+					<Image source={{uri: 'https://image.tmdb.org/t/p/w185/'+this.state.actors.ending_actor.image_url}} style={styles.image} resizeMode='contain' />
 				</View>
 			</View>
 		);
