@@ -31,6 +31,7 @@ export default class GameplayScreen extends Component {
         isLoading: false,
         pathinfo: responseJson,
       })
+      console.log(this.state.pathinfo)
     })
     .catch((error) => {
       console.error(error)
@@ -38,9 +39,20 @@ export default class GameplayScreen extends Component {
   }
 
   render() {
+    if (this.state.isLoading) {
+      return (
+        <View>
+          <Text>Loading...</Text>
+        </View>
+      )
+    }
+
+    const { navigate } = this.props.navigation;
     return (
       <View>
-        <Text>Hello</Text>
+        <View>
+          <Image source={{uri: 'https://image.tmdb.org/t/p/w185/'+this.state.pathinfo.traceable.image_url}} style={{width:40, height:40}} />
+        </View>
       </View>
     )
   }
