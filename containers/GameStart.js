@@ -41,7 +41,12 @@ export default class GameStartFetch extends Component {
 		const { navigate } = this.props.navigation;
 		return (
 			<View>
-				<ActorImage text={{uri: 'https://image.tmdb.org/t/p/w185//nBNZadXqJSdt05SHLqgT0HuC5Gm.jpg'}} onPress={() => navigate('ActorsMovies')} />
+				<View>
+					<ActorImage text={{uri: 'https://image.tmdb.org/t/p/w185/'+this.state.actors.starting_actor.image_url}} onPress={() => navigate('ActorsMovies')} />
+				</View>
+				<View>
+					<ActorImage text={{uri: 'https://image.tmdb.org/t/p/w185/'+this.state.actors.ending_actor.image_url}} onPress={() => navigate('ActorsMovies')} />
+				</View>
 			</View>
 		);
 	}
