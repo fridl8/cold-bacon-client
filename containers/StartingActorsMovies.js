@@ -7,7 +7,7 @@ import { StackNagivator } from 'react-navigation';
 export default class StartingActorsMovies extends Component {
   render() {
     return (
-      <Text>Starting</Text>
+      <Text>{this.props.navigation.state.params.id}</Text>
     )
   }
 }

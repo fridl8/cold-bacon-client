@@ -42,7 +42,7 @@ export default class GameStartFetch extends Component {
 		return (
 			<View>
 				<View>
-					<ActorImage text={{uri: 'https://image.tmdb.org/t/p/w185/'+this.state.actors.starting_actor.image_url}} onPress={() => navigate('ActorsMovies')} />
+					<ActorImage text={{uri: 'https://image.tmdb.org/t/p/w185/'+this.state.actors.starting_actor.image_url}} onPress={() => navigate('StartingActorsMovies', { id: this.state.actors.starting_actor.id} )} />
 				</View>
 				<View>
 					<Image source={{uri: 'https://image.tmdb.org/t/p/w185/'+this.state.actors.ending_actor.image_url}} style={{width:40, height:40}} />
