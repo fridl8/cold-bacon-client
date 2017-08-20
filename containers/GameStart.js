@@ -4,15 +4,6 @@ import styles from './styles/GameStartStyle';
 import ActorImage from '../components/ActorImage';
 import { StackNagivator } from 'react-navigation';
 
-class GameStartDisplay extends Component {
-	render() {
-		return (
-			<View>
-			</View>
-		);
-	}
-}
-
 export default class GameStartFetch extends Component {
 	constructor(props) {
 		super(props);
