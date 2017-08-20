@@ -5,7 +5,7 @@ export default StyleSheet.create({
 		color: 'darkblue',
 		fontSize: 45,
 		textAlign: 'center',
-		marginTop: Dimensions.get('window').height / 15,
+		marginTop: Dimensions.get('window').height / 13,
 		textShadowColor: 'midnightblue',
 		textShadowOffset: {width: 15, height: 20},
 		textShadowRadius: 10

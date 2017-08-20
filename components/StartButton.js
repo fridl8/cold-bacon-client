@@ -8,7 +8,7 @@ export default class StartButton extends Component {
 		onPress: PropTypes.func,
 		text: PropTypes.string,
 		children: PropTypes.string,
-		navigator: PropTypes.object
+		navigation: PropTypes.object
 	}
 
 	getText () {
