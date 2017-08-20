@@ -12,6 +12,10 @@ export default class GameplayScreen extends Component {
     }
   }
 
+  componentWillMount() {
+    console.log('ljsdflkjsdf============================')
+  }
+
   componentDidMount() {
     return fetch('http://localhost:3000/games/'+this.props.navigation.state.params.game_id+'/paths', {
       method: 'POST',
@@ -20,10 +24,9 @@ export default class GameplayScreen extends Component {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        game_id: this.props.navigation.state.params.game_id,
-        traceable_id: this.props.navigation.state.params.traceable_id,
         traceable_type: this.props.navigation.state.params.traceable_type,
-      })
+        traceable_id: this.props.navigation.state.params.traceable_id,
+      }),
     })
     .then((response) => response.json())
     .then((responseJson) => {
@@ -31,7 +34,6 @@ export default class GameplayScreen extends Component {
         isLoading: false,
         pathInfo: responseJson,
       })
-      console.log(this.state.pathInfo)
     })
     .catch((error) => {
       console.error(error)
@@ -48,16 +50,17 @@ export default class GameplayScreen extends Component {
     }
 
     const { navigate } = this.props.navigation;
+    let thingObject = this.state.pathInfo;
     return (
       <View>
         <View>
-          <Image source={{uri: 'https://image.tmdb.org/t/p/w185/'+this.state.pathInfo.traceable.image_url}} style={{width:40, height:40}} />
+          <Image source={{uri: 'https://image.tmdb.org/t/p/w185/'+this.state.pathInfo.current_traceable.traceable.image_url}} style={{width:40, height:40}} />
         </View>
         <View>
           {
-            this.state.pathInfo.traceables.map(function(traceable, index) {
+            this.state.pathInfo.possible_paths.map(function(possible_path, index) {
               return (
-                <ClickableImage key={index} text={{uri: 'https://image.tmdb.org/t/p/w185/'+traceable.image_url}} onPress={() => navigate('GameplayScreen', { game_id: this.state.pathInfo.game_id, traceable_id: this.state.pathInfo.current_traceable.traceable.id, traceable_type: this.state.pathInfo.current_traceable.traceable.type} )} />
+                <ClickableImage key={index} text={{uri: 'https://image.tmdb.org/t/p/w185/'+possible_path.traceable.image_url}} onPress={() => navigate('GameplayScreen', { game_id: thingObject.game_id, traceable_id: thingObject.current_traceable.traceable.id, traceable_type: thingObject.current_traceable.traceable.type} )} />
               )
             })
           }
