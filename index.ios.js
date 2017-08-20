@@ -10,7 +10,9 @@ const Nav = StackNavigator({
   LaunchScreen: {screen: LaunchScreen },
   GameStart: {screen: GameStart },
   ActorsMovies: {screen: ActorsMovies},
-  StartingActorsMovies: {screen: StartingActorsMovies},
+  StartingActorsMovies: {
+    path: 'games/:id',
+    screen: StartingActorsMovies},
   }, {
     headerMode: 'none'
   }
