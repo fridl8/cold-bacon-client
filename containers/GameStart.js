@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Text, View, Image } from 'react-native';
 import styles from './styles/GameStartStyle';
-import ActorImage from '../components/ActorImage';
+import ClickableImage from '../components/ClickableImage';
 import { StackNagivator } from 'react-navigation';
 
 export default class GameStartFetch extends Component {
@@ -42,7 +42,7 @@ export default class GameStartFetch extends Component {
 		return (
 			<View>
 				<View>
-					<ActorImage text={{uri: 'https://image.tmdb.org/t/p/w185/'+this.state.actors.starting_actor.image_url}} onPress={() => navigate('ActorsMovies')} />
+					<ClickableImage text={{uri: 'https://image.tmdb.org/t/p/w185/'+this.state.actors.starting_actor.image_url}} onPress={() => navigate('GameplayScreen', { game_id: this.state.actors.game_id, traceable_id: this.state.actors.starting_actor.id, traceable_type: 'Actor'} )} />
 				</View>
 				<View>
 					<Image source={{uri: 'https://image.tmdb.org/t/p/w185/'+this.state.actors.ending_actor.image_url}} style={{width:40, height:40}} />
