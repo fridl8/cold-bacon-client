@@ -6,7 +6,12 @@ class GameStartDisplay extends Component {
 	render() {
 		return (
 			<View>
-				<Text>{this.actor.name}</Text>
+				<View>
+					<Text>{this.props.actors.starting_actor.name}</Text>
+				</View>
+				<View>
+					<Text>{this.props.actors.ending_actor.name}</Text>
+				</View>
 			</View>
 		);
 	}
@@ -21,31 +26,20 @@ export default class GameStartFetch extends Component {
 	}
 
 	componentDidMount() {
-		// return fetch('http://localhost:3000/games/create', {
-		// 	method: 'POST',
-		// 	headers: {
-		// 		'Accept': 'applicaton/json',
-		// 		'Content-Type': 'application/json',
-		// 	}
-		// })
-		// .then((response) => response.json())
-		// .then((responseJson) => {
-		// 	this.setState({
-		// 		isLoading: false,
-		// 		actor: responseJson,
-		// 	})
-		// })
-		return fetch('http://localhost:3000/actors/1.json')
+		return fetch('http://localhost:3000/games', {
+			method: 'POST',
+			headers: {
+				'Accept': 'applicaton/json',
+				'Content-Type': 'application/json',
+			}
+		})
 		.then((response) => response.json())
 		.then((responseJson) => {
 			this.setState({
 				isLoading: false,
-				actor:responseJson,
-			});
+				actors: responseJson,
+			})
 		})
-		.catch((error) => {
-			console.log(error);
-		});
 	}
 
 	render() {
@@ -59,7 +53,7 @@ export default class GameStartFetch extends Component {
 
 		return (
 			<View>
-				<GameStartDisplay actor={this.state.actor}/>
+				<GameStartDisplay actors={this.state.actors}/>
 			</View>
 		);
 	}
