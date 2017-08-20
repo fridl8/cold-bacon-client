@@ -6,11 +6,11 @@ class GameStartDisplay extends Component {
 	render() {
 		return (
 			<View>
-				<View>
-					<Text>{this.props.actors.starting_actor.name}</Text>
+				<View style={styles.startingView}>
+					<Text style={styles.startingText}>{this.props.actors.starting_actor.name}</Text>
 				</View>
-				<View>
-					<Text>{this.props.actors.ending_actor.name}</Text>
+				<View style={styles.endingView}>
+					<Text style={styles.endingText}>{this.props.actors.ending_actor.name}</Text>
 				</View>
 			</View>
 		);
