@@ -3,16 +3,14 @@ import { AppRegistry } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 import GameStart from './containers/GameStart';
 import LaunchScreen from './containers/LaunchScreen';
-import ActorsMovies from './containers/ActorsMovies';
-import StartingActorsMovies from './containers/StartingActorsMovies';
+import GameplayScreen from './containers/GameplayScreen';
 
 const Nav = StackNavigator({
   LaunchScreen: {screen: LaunchScreen },
   GameStart: {screen: GameStart },
-  ActorsMovies: {screen: ActorsMovies},
-  StartingActorsMovies: {
-    path: 'games/:id',
-    screen: StartingActorsMovies},
+  GameplayScreen: {
+    path: 'games/:game_id/:traceable_id/:traceable_type',
+    screen: GameplayScreen},
   }, {
     headerMode: 'none'
   }
