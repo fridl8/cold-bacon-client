@@ -7,6 +7,9 @@ import LaunchScreen from './containers/LaunchScreen';
 const Nav = StackNavigator({
 	LaunchScreen: {screen: LaunchScreen },
   GameStart: {screen: GameStart }
-});
+	}, {
+		headerMode: 'none'
+	}
+);
 
 AppRegistry.registerComponent('client', () => Nav);
