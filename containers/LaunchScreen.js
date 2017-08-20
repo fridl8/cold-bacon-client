@@ -6,10 +6,6 @@ import StartButton from '../components/StartButton';
 import GameStart from './GameStart';
 
 export default class LaunchScreen extends Component {
-	static navigationOptions = {
-		header: null,
-		title: 'Launch Screen',
-	};
 	render() {
 		const { navigate } = this.props.navigation;
 		return (

@@ -4,15 +4,6 @@ import styles from './styles/GameStartStyle';
 import ActorImage from '../components/ActorImage';
 import { StackNagivator } from 'react-navigation';
 
-class GameStartDisplay extends Component {
-	render() {
-		return (
-			<View>
-			</View>
-		);
-	}
-}
-
 export default class GameStartFetch extends Component {
 	constructor(props) {
 		super(props);
@@ -50,7 +41,12 @@ export default class GameStartFetch extends Component {
 		const { navigate } = this.props.navigation;
 		return (
 			<View>
-				<ActorImage text={{uri: 'https://image.tmdb.org/t/p/w185//nBNZadXqJSdt05SHLqgT0HuC5Gm.jpg'}} onPress={() => navigate('ActorsMovies')} />
+				<View>
+					<ActorImage text={{uri: 'https://image.tmdb.org/t/p/w185/'+this.state.actors.starting_actor.image_url}} onPress={() => navigate('ActorsMovies')} />
+				</View>
+				<View>
+					<Image source={{uri: 'https://image.tmdb.org/t/p/w185/'+this.state.actors.ending_actor.image_url}} style={{width:40, height:40}} />
+				</View>
 			</View>
 		);
 	}

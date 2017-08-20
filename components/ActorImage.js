@@ -15,7 +15,7 @@ export default class ActorImage extends Component {
   render() {
     return (
       <TouchableOpacity onPress={this.props.onPress}>
-        <Image source={this.props.text} style={{width:40, height:40}}/>
+        <Image source={this.props.text} style={{width:40, height:40}} />
       </TouchableOpacity>
     )
   }

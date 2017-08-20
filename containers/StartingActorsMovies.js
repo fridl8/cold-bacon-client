@@ -4,10 +4,10 @@ import styles from './styles/ActorsMoviesStyle';
 import ActorImage from '../components/ActorImage';
 import { StackNagivator } from 'react-navigation';
 
-export default class ActorsMovies extends Component {
+export default class StartingActorsMovies extends Component {
   render() {
     return (
-      <Text>Movies</Text>
+      <Text>Starting</Text>
     )
   }
 }
