@@ -1,17 +1,13 @@
 import React, { Component } from 'react';
-import { Text, View } from 'react-native';
+import { Text, View, Image } from 'react-native';
 import styles from './styles/GameStartStyle';
+import ActorImage from '../components/ActorImage';
+import { StackNagivator } from 'react-navigation';
 
 class GameStartDisplay extends Component {
 	render() {
 		return (
 			<View>
-				<View style={styles.startingView}>
-					<Text style={styles.startingText}>{this.props.actors.starting_actor.name}</Text>
-				</View>
-				<View style={styles.endingView}>
-					<Text style={styles.endingText}>{this.props.actors.ending_actor.name}</Text>
-				</View>
 			</View>
 		);
 	}
@@ -51,9 +47,10 @@ export default class GameStartFetch extends Component {
 			)
 		}
 
+		const { navigate } = this.props.navigation;
 		return (
 			<View>
-				<GameStartDisplay actors={this.state.actors}/>
+				<ActorImage text={{uri: 'https://image.tmdb.org/t/p/w185//nBNZadXqJSdt05SHLqgT0HuC5Gm.jpg'}} onPress={() => navigate('ActorsMovies')} />
 			</View>
 		);
 	}
