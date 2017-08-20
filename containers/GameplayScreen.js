@@ -57,7 +57,7 @@ export default class GameplayScreen extends Component {
           {
             this.state.pathInfo.traceables.map(function(traceable, index) {
               return (
-                <ClickableImage key={index} text={{uri: 'https://image.tmdb.org/t/p/w185/'+traceable.image_url}} onPress={() => navigate('GameplayScreen', { game_id: this.state.pathInfo.game_id, traceable_id: this.state.pathInfo.traceable.id, traceable_type: this.state.pathInfo.traceable.type} )} />
+                <ClickableImage key={index} text={{uri: 'https://image.tmdb.org/t/p/w185/'+traceable.image_url}} onPress={() => navigate('GameplayScreen', { game_id: this.state.pathInfo.game_id, traceable_id: this.state.pathInfo.current_traceable.traceable.id, traceable_type: this.state.pathInfo.current_traceable.traceable.type} )} />
               )
             })
           }
