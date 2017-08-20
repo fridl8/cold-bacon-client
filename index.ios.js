@@ -5,49 +5,95 @@
  */
 
 import React, { Component } from 'react';
-import {
-  AppRegistry,
-  StyleSheet,
-  Text,
-  View
-} from 'react-native';
+import { AppRegistry } from 'react-native';
+import { StackNavigator } from 'react-navigation';
+import GameStart from './containers/GameStart';
+import LaunchScreen from './containers/LaunchScreen';
 
-export default class client extends Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
-        </Text>
-      </View>
-    );
-  }
-}
+const Nav = StackNavigator({
+	LaunchScreen: {screen: LaunchScreen },
+  GameStart: {screen: GameStart }
+	}, {
+		headerMode: 'none'
+	}
+);
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
+AppRegistry.registerComponent('client', () => Nav);
 
-AppRegistry.registerComponent('client', () => client);
+//  import React, { Component } from 'react';
+//  import {
+//   AppRegistry,
+//   StyleSheet,
+//   Text,
+//   View
+// } from 'react-native';
+
+// class ActorDisplay extends Component {
+//   render() {
+//     return (
+//       <Text>{this.props.actor.name}</Text>
+//       );
+//   }
+// }
+
+// export default class client extends Component {
+//   constructor(props) {
+//     super(props);
+//     this.state = {
+//       isLoading: true,
+//     }
+//   }
+
+//   componentDidMount() {
+//     return fetch('http://localhost:3000/actors/1.json')
+//     .then((response) => response.json())
+//     .then((responseJson) => {
+//       this.setState({
+//         isLoading: false,
+//         actor: responseJson,
+//       }, function() {
+//         // do something with new state
+//       });
+//     })
+//     .catch((error) => {
+//       console.error(error);
+//     });
+//   }
+
+//   render() {
+//     if (this.state.isLoading) {
+//       return (
+//         <View style={styles.container}>
+//           <Text>Im a text</Text>
+//         </View>
+//       )
+//     }
+
+//     return (
+//       <View style={styles.container}>
+//       <ActorDisplay actor={this.state.actor}/>
+//       </View>
+//       );
+//   }
+// }
+
+// const styles = StyleSheet.create({
+//   container: {
+//     flex: 1,
+//     justifyContent: 'center',
+//     alignItems: 'center',
+//     backgroundColor: '#F5FCFF',
+//   },
+//   welcome: {
+//     fontSize: 20,
+//     textAlign: 'center',
+//     margin: 10,
+//   },
+//   instructions: {
+//     textAlign: 'center',
+//     color: '#333333',
+//     marginBottom: 5,
+//   },
+// });
+
+// AppRegistry.registerComponent('client', () => client);
