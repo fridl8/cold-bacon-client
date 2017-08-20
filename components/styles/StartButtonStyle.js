@@ -7,7 +7,7 @@ export default StyleSheet.create({
 		marginHorizontal: 5,
 		backgroundColor: 'black',
 		justifyContent: 'center',
-		top: Dimensions.get('window').height / 1.8
+		top: Dimensions.get('window').height / 1.6
 	},
 	buttonText: {
 		color: 'white',
