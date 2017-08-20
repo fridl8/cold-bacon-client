@@ -14,8 +14,8 @@ export default class ClickableImage extends Component {
 
   render() {
     return (
-      <TouchableOpacity activeOpacity={.85} onPress={this.props.onPress}>
-        <Image source={this.props.text} style={{width:40, height:40}} />
+      <TouchableOpacity style={styles.touchable} activeOpacity={.85} onPress={this.props.onPress}>
+          <Image source={this.props.text} style={{width:40, height:40}} />
       </TouchableOpacity>
     )
   }
