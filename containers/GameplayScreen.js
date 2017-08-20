@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { Text, Image, View } from 'react-native';
 import styles from './styles/GameplayScreenStyle';
-import ActorImage from '../components/ActorImage';
+import ClickableImage from '../components/ClickableImage';
 import { StackNagivator } from 'react-navigation';
 
-export default class StartingActorsMovies extends Component {
+export default class GameplayScreen extends Component {
   constructor(props) {
     super(props);
     this.state = {
