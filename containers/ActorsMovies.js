@@ -7,7 +7,7 @@ import { StackNagivator } from 'react-navigation';
 export default class ActorsMovies extends Component {
   render() {
     return (
-      <Text>Movies!</Text>
+      <Text>Movies</Text>
     )
   }
 }
