@@ -51,4 +51,3 @@ export default class GameStartFetch extends Component {
 		);
 	}
 }
-// <Text>{this.ending_actor.name}</Text>

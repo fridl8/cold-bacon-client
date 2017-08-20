@@ -29,9 +29,9 @@ export default class GameplayScreen extends Component {
     .then((responseJson) => {
       this.setState({
         isLoading: false,
-        pathinfo: responseJson,
+        pathInfo: responseJson,
       })
-      console.log(this.state.pathinfo)
+      console.log(this.state.pathInfo)
     })
     .catch((error) => {
       console.error(error)
@@ -51,7 +51,16 @@ export default class GameplayScreen extends Component {
     return (
       <View>
         <View>
-          <Image source={{uri: 'https://image.tmdb.org/t/p/w185/'+this.state.pathinfo.traceable.image_url}} style={{width:40, height:40}} />
+          <Image source={{uri: 'https://image.tmdb.org/t/p/w185/'+this.state.pathInfo.traceable.image_url}} style={{width:40, height:40}} />
+        </View>
+        <View>
+          {
+            this.state.pathInfo.traceables.map(function(traceable, index) {
+              return (
+                <ClickableImage key={index} text={{uri: 'https://image.tmdb.org/t/p/w185/'+traceable.image_url}} onPress={() => navigate('GameplayScreen', { game_id: this.state.pathInfo.game_id, traceable_id: this.state.pathInfo.traceable.id, traceable_type: this.state.pathInfo.traceable.type} )} />
+              )
+            })
+          }
         </View>
       </View>
     )
