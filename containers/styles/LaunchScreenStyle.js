@@ -4,10 +4,11 @@ export default StyleSheet.create({
 	header: {
 		color: 'white',
     backgroundColor: 'rgba(0, 0, 0, 0)',
-		fontSize: 45,
+		fontSize: 55,
 		textAlign: 'center',
 		marginTop: Dimensions.get('window').height / 2.3,
-    fontFamily: 'Bodoni 72 Smallcaps',
+    fontFamily: 'Faster One',
+    fontWeight: '900',
 	},
   kevin: {
     marginTop: 20,
