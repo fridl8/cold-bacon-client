@@ -3,6 +3,8 @@ import { Text, Image, View } from 'react-native';
 import styles from './styles/GameplayScreenStyle';
 import ClickableImage from '../components/ClickableImage';
 import { StackNagivator } from 'react-navigation';
+import GameStart from './GameStart';
+import RestartButton from '../components/RestartButton';
 
 export default class GameplayScreen extends Component {
   constructor(props) {
@@ -10,10 +12,6 @@ export default class GameplayScreen extends Component {
     this.state = {
       isLoading: true,
     }
-  }
-
-  componentWillMount() {
-    console.log('ljsdflkjsdf============================')
   }
 
   componentDidMount() {
@@ -50,24 +48,44 @@ export default class GameplayScreen extends Component {
       )
     }
 
-    const { navigate } = this.props.navigation;
-    let thingObject = this.state.pathInfo;
-    return (
-      <View>
+    if (!this.state.isLoading && this.state.pathInfo.game_is_finished === true) {
+      const { navigate } = this.props.navigation;
+      return (
         <View>
-          <Image source={{uri: 'https://image.tmdb.org/t/p/w185/'+this.state.pathInfo.current_traceable.traceable.image_url}} style={{width:40, height:40}} />
+          <View>
+            {
+              this.state.pathInfo.paths_chosen.map(function(path, index) {
+                return (
+                  <Text key={index}>{path.name}</Text>
+                )
+              })
+            }
+          </View>
+          <View>
+            <RestartButton text='Restart' onPress={() => navigate('LaunchScreen')} />
+          </View>
         </View>
+      )
+    }
+    else {
+      const { navigate } = this.props.navigation;
+      let thingObject = this.state.pathInfo;
+      return (
         <View>
-          {
-            this.state.pathInfo.possible_paths.map(function(possible_path, index) {
-              return (
-                <ClickableImage key={index} text={{uri: 'https://image.tmdb.org/t/p/w185/'+possible_path.traceable.image_url}} onPress={() => navigate('GameplayScreen', { game_id: thingObject.game_id, traceable_id: possible_path.traceable.id, traceable_type: possible_path.traceable_type} )} />
-              )
-            })
-          }
+          <View>
+            <Image source={{uri: 'https://image.tmdb.org/t/p/w185/'+this.state.pathInfo.current_traceable.traceable.image_url}} style={{width:40, height:40}} />
+          </View>
+          <View>
+            {
+              this.state.pathInfo.possible_paths.map(function(possible_path, index) {
+                return (
+                  <ClickableImage key={index} text={{uri: 'https://image.tmdb.org/t/p/w185/'+possible_path.traceable.image_url}} onPress={() => navigate('GameplayScreen', { game_id: thingObject.game_id, traceable_id: possible_path.traceable.id, traceable_type: possible_path.traceable_type} )} />
+                )
+              })
+            }
+          </View>
         </View>
-        <Text>{ thingObject.game_id }</Text>
-      </View>
-    )
+      )
+    }
   }
 }
