@@ -23,5 +23,16 @@ export default StyleSheet.create({
     height:180,
     backgroundColor:'white',
     borderRadius: 54,
+  },
+  start_name: {
+    top: 40,
+    fontFamily: 'Bodoni 72 Smallcaps',
+    fontSize: 30,
+    textAlign: 'center',
+  },
+  end_name: {
+    fontFamily: 'Bodoni 72 Smallcaps',
+    fontSize: 30,
+    textAlign: 'center',
   }
 })

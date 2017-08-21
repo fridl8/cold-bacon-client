@@ -42,6 +42,9 @@ export default class GameStart extends Component {
 		const { navigate } = this.props.navigation;
 		return (
 			<View style={styles.viewFlex}>
+				<View>
+					<Text style={styles.start_name} >{this.state.actors.starting_actor.name}</Text>
+				</View>
 				<FadeInView>
 					<View style={styles.startingView}>
 						<ClickableImage text={{uri: 'https://image.tmdb.org/t/p/w185/'+this.state.actors.starting_actor.image_url}} onPress={() => navigate('GameplayScreen', { game_id: this.state.actors.game_id, traceable_id: this.state.actors.starting_actor.id, traceable_type: 'Actor'} )} />
@@ -49,9 +52,12 @@ export default class GameStart extends Component {
 				</FadeInView>
 				<FadeInView>
 					<View style={styles.endingView}>
-						<Image source={{uri: 'https://image.tmdb.org/t/p/w185/'+this.state.actors.ending_actor.image_url}} style={styles.image} resizeMode='contain' />
+						<Image source={{uri: 'https://image.tmdb.org/t/p/w185/'+this.state.actors.ending_actor.image_url}} style={styles.image} resizeMode='contain'/>
 					</View>
 				</FadeInView>
+					<View>
+						<Text style={styles.end_name} >{this.state.actors.ending_actor.name}</Text>
+					</View>
 			</View>
 		);
 	}
