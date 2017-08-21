@@ -5,6 +5,8 @@ import ClickablePath from '../components/ClickablePath';
 import { StackNagivator } from 'react-navigation';
 import GameStart from './GameStart';
 import RestartButton from '../components/RestartButton';
+import LaunchScreen from './LaunchScreen';
+import ResultsButton from '../components/ResultsButton';
 
 export default class GameplayScreen extends Component {
   constructor(props) {
@@ -51,19 +53,13 @@ export default class GameplayScreen extends Component {
     if (!this.state.isLoading && this.state.pathInfo.game_is_finished === true) {
       const { navigate } = this.props.navigation;
       return (
-        <View style={styles.endingPaths}>
-          <View>
-            {
-              this.state.pathInfo.paths_chosen.map(function(path, index) {
-                return (
-                  <Text key={index}>{path.name}</Text>
-                )
-              })
-            }
-          </View>
-          <View>
-            <RestartButton text='Restart' onPress={() => navigate('LaunchScreen')} />
-          </View>
+        <View>
+        <View>
+          <ResultsButton text='To Results' onPress={() => navigate('ResultsScreen', { game_id: this.state.pathInfo.game_id } )} />
+        </View>
+        <View>
+        <Text>{this.state.pathInfo.game_id}</Text>
+        </View>
         </View>
       )
     }
