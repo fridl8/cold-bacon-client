@@ -2,17 +2,17 @@ import { StyleSheet, Dimensions } from 'react-native';
 
 export default StyleSheet.create({
 	button: {
-		height: 45,
+		height: 60,
 		borderRadius: 5,
 		marginHorizontal: 5,
 		backgroundColor: 'black',
 		justifyContent: 'center',
-		top: Dimensions.get('window').height / 1.6
+		top: Dimensions.get('window').height / 4
 	},
 	buttonText: {
 		color: 'white',
 		textAlign: 'center',
 		fontWeight: 'bold',
-		fontSize: 15
+		fontSize: 20
 	}
 });

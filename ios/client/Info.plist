@@ -39,9 +39,8 @@
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
+	<string/>
 	<key>NSAppTransportSecurity</key>
-	<!--See http://ste.vn/2015/06/10/configuring-app-transport-security-ios-9-osx-10-11/ -->
 	<dict>
 		<key>NSExceptionDomains</key>
 		<dict>
@@ -52,5 +51,51 @@
 			</dict>
 		</dict>
 	</dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>AllertaStencil-Regular.ttf</string>
+		<string>Allura-Regular.ttf</string>
+		<string>Anton-Regular.ttf</string>
+		<string>Bangers-Regular.ttf</string>
+		<string>CabinSketch-Bold.ttf</string>
+		<string>CabinSketch-Regular.ttf</string>
+		<string>Courgette-Regular.ttf</string>
+		<string>Lobster-Regular.ttf</string>
+		<string>LobsterTwo-Bold.ttf</string>
+		<string>LobsterTwo-BoldItalic.ttf</string>
+		<string>LobsterTwo-Italic.ttf</string>
+		<string>Merriweather-Black.ttf</string>
+		<string>Merriweather-BlackItalic.ttf</string>
+		<string>Merriweather-Bold.ttf</string>
+		<string>Merriweather-BoldItalic.ttf</string>
+		<string>Merriweather-Italic.ttf</string>
+		<string>Merriweather-Light.ttf</string>
+		<string>Merriweather-LightItalic.ttf</string>
+		<string>Merriweather-Regular.ttf</string>
+		<string>Monoton-Regular.ttf</string>
+		<string>MontserratSubrayada-Bold.ttf</string>
+		<string>MontserratSubrayada-Regular.ttf</string>
+		<string>Oswald-Bold.ttf</string>
+		<string>Oswald-ExtraLight.ttf</string>
+		<string>Oswald-Light.ttf</string>
+		<string>Oswald-Medium.ttf</string>
+		<string>Oswald-Regular.ttf</string>
+		<string>Oswald-SemiBold.ttf</string>
+		<string>PermanentMarker-Regular.ttf</string>
+		<string>Playball-Regular.ttf</string>
+		<string>RacingSansOne-Regular.ttf</string>
+		<string>RobotoSlab-Bold.ttf</string>
+		<string>RobotoSlab-Light.ttf</string>
+		<string>RobotoSlab-Regular.ttf</string>
+		<string>RobotoSlab-Thin.ttf</string>
+		<string>RockSalt-Regular.ttf</string>
+		<string>SedgwickAve-Regular.ttf</string>
+		<string>SedgwickAveDisplay-Regular.ttf</string>
+		<string>SigmarOne-Regular.ttf</string>
+		<string>SixCaps.ttf</string>
+		<string>ZillaSlabHighlight-Bold.ttf</string>
+		<string>ZillaSlabHighlight-Regular.ttf</string>
+		<string>FasterOne-Regular.ttf</string>
+	</array>
 </dict>
 </plist>

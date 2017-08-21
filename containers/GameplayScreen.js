@@ -70,7 +70,7 @@ export default class GameplayScreen extends Component {
         <View style={styles.mainContainer}>
           <View style={styles.actorView}>
             <View>
-              <Image source={{uri: 'https://image.tmdb.org/t/p/w185/'+this.state.pathInfo.current_traceable.traceable.image_url}} style={styles.image} />
+              <Image source={{uri: 'https://image.tmdb.org/t/p/w300/'+this.state.pathInfo.current_traceable.traceable.image_url}} style={styles.image} />
             </View>
           </View>
           <View style={styles.pathsView}>
@@ -78,7 +78,7 @@ export default class GameplayScreen extends Component {
               {
                 this.state.pathInfo.possible_paths.map(function(possible_path, index) {
                   return (
-                    <ClickablePath key={index} text={{uri: 'https://image.tmdb.org/t/p/w185/'+possible_path.traceable.image_url}} onPress={() => navigate('GameplayScreen', { game_id: responseObject.game_id, traceable_id: possible_path.traceable.id, traceable_type: possible_path.traceable_type} )} />
+                  <ClickablePath key={index} text={{uri: 'https://image.tmdb.org/t/p/w185/'+possible_path.traceable.image_url}} onPress={() => navigate('GameplayScreen', { game_id: responseObject.game_id, traceable_id: possible_path.traceable.id, traceable_type: possible_path.traceable_type} )} />
                   )
                 })
               }
