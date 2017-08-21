@@ -4,13 +4,17 @@ export default StyleSheet.create({
   startingView: {
     marginTop: Dimensions.get('window').height / 14
   },
-  startingText: {
-    textAlign: 'center'
-  },
   endingView: {
-    marginTop: Dimensions.get('window').height / 1.6
+    marginTop: Dimensions.get('window').height / 2
   },
-  endingText: {
-    textAlign: 'center'
+  viewFlex: {
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  image: {
+    height: 150,
+    width: 150
   }
 })
