@@ -51,7 +51,7 @@ export default class GameplayScreen extends Component {
     if (!this.state.isLoading && this.state.pathInfo.game_is_finished === true) {
       const { navigate } = this.props.navigation;
       return (
-        <View>
+        <View style={styles.endingPaths}>
           <View>
             {
               this.state.pathInfo.paths_chosen.map(function(path, index) {
@@ -69,20 +69,27 @@ export default class GameplayScreen extends Component {
     }
     else {
       const { navigate } = this.props.navigation;
-      let thingObject = this.state.pathInfo;
+      let responseObject = this.state.pathInfo;
       return (
-        <View>
-          <View>
-            <Image source={{uri: 'https://image.tmdb.org/t/p/w185/'+this.state.pathInfo.current_traceable.traceable.image_url}} style={{width:40, height:40}} />
+        <View style={styles.mainContainer}>
+          <View style={styles.ActorView}>
+            <View>
+              <Image source={{uri: 'https://image.tmdb.org/t/p/w185/'+this.state.pathInfo.current_traceable.traceable.image_url}} style={styles.image} />
+            </View>
+            <View>
+              <Image source={{uri: 'https://image.tmdb.org/t/p/w185/'+this.state.pathInfo.ending_traceable.image_url}} style={styles.image} />
+            </View>
           </View>
           <View>
-            {
-              this.state.pathInfo.possible_paths.map(function(possible_path, index) {
-                return (
-                  <ClickableImage key={index} text={{uri: 'https://image.tmdb.org/t/p/w185/'+possible_path.traceable.image_url}} onPress={() => navigate('GameplayScreen', { game_id: thingObject.game_id, traceable_id: possible_path.traceable.id, traceable_type: possible_path.traceable_type} )} />
-                )
-              })
-            }
+            <View>
+              {
+                this.state.pathInfo.possible_paths.map(function(possible_path, index) {
+                  return (
+                    <ClickableImage key={index} text={{uri: 'https://image.tmdb.org/t/p/w185/'+possible_path.traceable.image_url}} onPress={() => navigate('GameplayScreen', { game_id: responseObject.game_id, traceable_id: possible_path.traceable.id, traceable_type: possible_path.traceable_type} )} />
+                  )
+                })
+              }
+            </View>
           </View>
         </View>
       )
