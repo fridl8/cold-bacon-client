@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { TouchableOpacity, Text } from 'react-native';
+import { TouchableOpacity, Text, Animated } from 'react-native';
 import styles from './styles/StartButtonStyle';
+import FadeInView from '../animations/FadeInView';
 
 export default class StartButton extends Component {
 	static propTypes = {
@@ -18,9 +19,11 @@ export default class StartButton extends Component {
 
 	render () {
 		return (
-			<TouchableOpacity style={styles.button} onPress={this.props.onPress}>
-				<Text style={styles.buttonText}>{this.getText()}</Text>
-			</TouchableOpacity>
+			<FadeInView>
+				<TouchableOpacity style={styles.button} onPress={this.props.onPress}>
+					<Text style={styles.buttonText}>{this.getText()}</Text>
+				</TouchableOpacity>
+			</FadeInView>
 		)
 	}
 }

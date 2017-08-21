@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { TouchableOpacity, Image } from 'react-native';
+import { TouchableOpacity, Image, View } from 'react-native';
 import styles from './styles/ClickableImageStyle';
 import PropTypes from 'prop-types';
 import { StackNagivator } from 'react-navigation';
+import FadeInView from '../animations/FadeInView';
 
 export default class ClickableImage extends Component {
   static propTypes = {
@@ -14,9 +15,15 @@ export default class ClickableImage extends Component {
 
   render() {
     return (
-      <TouchableOpacity style={styles.touchableSize} activeOpacity={.85} onPress={this.props.onPress}>
-          <Image style={{height:90, width:90}} source={this.props.text} resizeMode='contain' />
-      </TouchableOpacity>
+      <View>
+        <FadeInView>
+          <TouchableOpacity style={styles.touchableSize} activeOpacity={.85} onPress={this.props.onPress}>
+              <Image style={{height:90, width:90}} source={this.props.text} resizeMode='contain' />
+          </TouchableOpacity>
+        </FadeInView>
+      </View>
     )
   }
 }
+
+// style={styles.image}
