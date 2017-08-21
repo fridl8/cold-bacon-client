@@ -10,7 +10,7 @@ export default class LaunchScreen extends Component {
 		const { navigate } = this.props.navigation;
 		return (
 		<View style={styles.container} >
-      <Image source={require('../assets/cold-kevin.jpg')} style={styles.kevin} >
+      <Image source={require('../assets/images/cold-kevin.jpg')} style={styles.kevin} >
       <View>
         <Text style={styles.header}>Cold Bacon</Text>
       </View>
