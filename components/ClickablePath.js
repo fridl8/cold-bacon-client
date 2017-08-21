@@ -3,6 +3,7 @@ import { TouchableOpacity, Image, View } from 'react-native';
 import styles from './styles/ClickablePathStyle';
 import PropTypes from 'prop-types';
 import { StackNagivator } from 'react-navigation';
+import FadeInView from '../animations/FadeInView';
 
 export default class ClickablePath extends Component {
   static propTypes = {
@@ -15,9 +16,11 @@ export default class ClickablePath extends Component {
   render() {
     return (
       <View>
-      <TouchableOpacity style={styles.touchableSize} activeOpacity={.85} onPress={this.props.onPress}>
-          <Image style={styles.image} source={this.props.text} resizeMode='contain' />
-      </TouchableOpacity>
+        <FadeInView>
+          <TouchableOpacity style={styles.touchableSize} activeOpacity={.85} onPress={this.props.onPress}>
+              <Image style={styles.image} source={this.props.text} resizeMode='contain' />
+          </TouchableOpacity>
+        </FadeInView>
       </View>
     )
   }
