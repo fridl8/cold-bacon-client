@@ -5,7 +5,7 @@ export default StyleSheet.create({
 		color: 'black',
 		fontSize: 45,
 		textAlign: 'center',
-		marginTop: Dimensions.get('window').height / 13,
+		marginTop: Dimensions.get('window').height / 6,
     fontFamily: 'Bodoni 72 Smallcaps',
 	}
 });
