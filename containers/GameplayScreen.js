@@ -34,6 +34,7 @@ export default class GameplayScreen extends Component {
         isLoading: false,
         pathInfo: responseJson,
       })
+      console.log(this.state.pathInfo);
     })
     .catch((error) => {
       console.error(error)
@@ -60,11 +61,12 @@ export default class GameplayScreen extends Component {
           {
             this.state.pathInfo.possible_paths.map(function(possible_path, index) {
               return (
-                <ClickableImage key={index} text={{uri: 'https://image.tmdb.org/t/p/w185/'+possible_path.traceable.image_url}} onPress={() => navigate('GameplayScreen', { game_id: thingObject.game_id, traceable_id: thingObject.current_traceable.traceable.id, traceable_type: thingObject.current_traceable.traceable.type} )} />
+                <ClickableImage key={index} text={{uri: 'https://image.tmdb.org/t/p/w185/'+possible_path.traceable.image_url}} onPress={() => navigate('GameplayScreen', { game_id: thingObject.game_id, traceable_id: possible_path.traceable.id, traceable_type: possible_path.traceable_type} )} />
               )
             })
           }
         </View>
+        <Text>{ thingObject.game_id }</Text>
       </View>
     )
   }
