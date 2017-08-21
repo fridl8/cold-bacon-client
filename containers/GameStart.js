@@ -4,7 +4,7 @@ import styles from './styles/GameStartStyle';
 import ClickableImage from '../components/ClickableImage';
 import { StackNagivator } from 'react-navigation';
 
-export default class GameStartFetch extends Component {
+export default class GameStart extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
