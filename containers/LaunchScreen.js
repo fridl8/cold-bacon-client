@@ -22,14 +22,3 @@ export default class LaunchScreen extends Component {
 		);
 	}
 }
-
-//  <View>
-//   <Image source={require('../assets/cold-kevin.jpg')} style={styles.kevin} >
-//     <View>
-//       <Text style={styles.header}>Cold Bacon</Text>
-//     </View>
-//     <View>
-//       <StartButton text='Start' onPress={() => navigate('GameStart')} />
-//     </View>
-//   </Image>
-// </View>

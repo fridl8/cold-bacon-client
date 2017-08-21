@@ -26,13 +26,13 @@ export default StyleSheet.create({
   },
   start_name: {
     top: 40,
-    fontFamily: 'Bodoni 72 Smallcaps',
-    fontSize: 30,
+    fontFamily: 'Montserrat Subrayada',
+    fontSize: 25,
     textAlign: 'center',
   },
   end_name: {
-    fontFamily: 'Bodoni 72 Smallcaps',
-    fontSize: 30,
+    fontFamily: 'Montserrat Subrayada',
+    fontSize: 25,
     textAlign: 'center',
   }
 })
