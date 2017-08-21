@@ -74,7 +74,7 @@ export default class GameplayScreen extends Component {
         <View style={styles.mainContainer}>
           <View style={styles.actorView}>
             <View>
-              <Image source={{uri: 'https://image.tmdb.org/t/p/w185/'+this.state.pathInfo.current_traceable.traceable.image_url}} style={styles.image} />
+              <Image source={{uri: 'https://image.tmdb.org/t/p/original/'+this.state.pathInfo.current_traceable.traceable.image_url}} style={styles.image} />
             </View>
           </View>
           <View style={styles.pathsView}>

@@ -2,10 +2,11 @@ import { StyleSheet, Dimensions } from 'react-native';
 
 export default StyleSheet.create({
   startingView: {
-    marginTop: Dimensions.get('window').height / 14
+    marginTop: Dimensions.get('window').height / 16
   },
   endingView: {
-    marginTop: Dimensions.get('window').height / 2
+    marginTop: Dimensions.get('window').height / 5
+    // marginBottom: 10,
   },
   viewFlex: {
     flex: 1,
@@ -14,7 +15,13 @@ export default StyleSheet.create({
     alignItems: 'center'
   },
   image: {
-    height: 150,
-    width: 150
+    borderWidth:1,
+    borderColor:'#c0c0c0',
+    alignItems:'center',
+    justifyContent:'center',
+    width: 120,
+    height:180,
+    backgroundColor:'white',
+    borderRadius: 54,
   }
 })

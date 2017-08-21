@@ -10,8 +10,8 @@ export default class LaunchScreen extends Component {
 		const { navigate } = this.props.navigation;
 		return (
 		  <View>
-			<Text style={styles.header}>Cold Bacon</Text>
-			<StartButton text='Start' onPress={() => navigate('GameStart')} />
+  			<Text style={styles.header}>Cold Bacon</Text>
+  			<StartButton text='Start' onPress={() => navigate('GameStart')} />
 			</View>
 		);
 	}
