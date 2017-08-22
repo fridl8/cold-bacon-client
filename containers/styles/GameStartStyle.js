@@ -2,7 +2,7 @@ import { StyleSheet, Dimensions } from 'react-native';
 
 export default StyleSheet.create({
   startingView: {
-    marginTop: Dimensions.get('window').height / 16
+    marginTop: Dimensions.get('window').height / 30
   },
   endingView: {
     marginTop: Dimensions.get('window').height / 5
@@ -12,20 +12,22 @@ export default StyleSheet.create({
     flex: 1,
     flexDirection: 'column',
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    // borderWidth: 1,
   },
   image: {
     borderWidth:1,
     borderColor:'#c0c0c0',
     alignItems:'center',
     justifyContent:'center',
-    width: 120,
+    width: 180,
     height:180,
     backgroundColor:'white',
-    borderRadius: 54,
+    borderRadius: 90,
+    resizeMode: 'cover'
   },
   start_name: {
-    top: 40,
+    top: 20,
     fontFamily: 'Montserrat Subrayada',
     fontSize: 25,
     textAlign: 'center',

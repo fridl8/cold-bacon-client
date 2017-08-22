@@ -12,9 +12,10 @@ export default StyleSheet.create({
     borderColor:'#c0c0c0',
     alignItems:'center',
     justifyContent:'center',
-    width: 120,
+    width: 180,
     height:180,
     backgroundColor:'white',
-    borderRadius: 54,
+    borderRadius: 90,
+    resizeMode: 'cover'
   }
 });

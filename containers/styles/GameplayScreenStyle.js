@@ -8,20 +8,26 @@ export default StyleSheet.create({
     marginLeft: Dimensions.get('window').width / 60,
     marginTop: Dimensions.get('window').width / 20,
   },
-  image: {
-    height: 80,
-    width: 80,
-    resizeMode: 'contain'
+  actor_image: {
+    borderWidth:1,
+    borderColor:'#c0c0c0',
+    alignItems:'center',
+    justifyContent:'center',
+    width: 140,
+    height: 140,
+    backgroundColor:'white',
+    borderRadius: 70,
+    resizeMode: 'cover'
   },
-  actorView: {
-    flex: .6,
+  startingActorView: {
+    flex: 1.2,
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
     // borderWidth: 1,
   },
   endingActorView: {
-    flex: .6,
+    flex: 1.2,
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
@@ -29,16 +35,18 @@ export default StyleSheet.create({
   },
   pathsView: {
     flex: 3,
+    justifyContent: 'center',
     // borderWidth: 1,
-    left: 0,
+    // left: 0,
   },
   path: {
     flexDirection: 'row',
     flexWrap: 'wrap',
-    alignItems: 'flex-start',
-    justifyContent: 'space-between'
+    justifyContent: 'space-around',
+    padding: 35,
+    // alignItems: 'flex-start',
   },
   endingPaths: {
-    marginTop: Dimensions.get('window').height / 14
+    marginTop: Dimensions.get('window').height / 2,
   }
 })

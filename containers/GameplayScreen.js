@@ -72,9 +72,9 @@ export default class GameplayScreen extends Component {
       let responseObject = this.state.pathInfo;
       return (
         <View style={styles.mainContainer}>
-          <View style={styles.actorView}>
+          <View style={styles.startingActorView}>
             <View>
-              <Image source={{uri: 'https://image.tmdb.org/t/p/w300/'+this.state.pathInfo.current_traceable.traceable.image_url}} style={styles.image} />
+              <Image source={{uri: 'https://image.tmdb.org/t/p/original/'+this.state.pathInfo.current_traceable.traceable.image_url}} style={styles.actor_image} />
             </View>
           </View>
           <View style={styles.pathsView}>
@@ -82,15 +82,15 @@ export default class GameplayScreen extends Component {
               {
                 this.state.pathInfo.possible_paths.map(function(possible_path, index) {
                   return (
-                  <ClickablePath key={index} text={{uri: 'https://image.tmdb.org/t/p/w185/'+possible_path.traceable.image_url}} onPress={() => navigate('GameplayScreen', { game_id: responseObject.game_id, traceable_id: possible_path.traceable.id, traceable_type: possible_path.traceable_type} )} />
+                  <ClickablePath key={index} text={{uri: 'https://image.tmdb.org/t/p/w300/'+possible_path.traceable.image_url}} onPress={() => navigate('GameplayScreen', { game_id: responseObject.game_id, traceable_id: possible_path.traceable.id, traceable_type: possible_path.traceable_type} )} />
                   )
                 })
               }
             </View>
           </View>
-          <View style={styles.actorView}>
+          <View style={styles.endingActorView}>
             <View>
-              <Image source={{uri: 'https://image.tmdb.org/t/p/w185/'+this.state.pathInfo.ending_traceable.image_url}} style={styles.image} />
+              <Image source={{uri: 'https://image.tmdb.org/t/p/original/'+this.state.pathInfo.ending_traceable.image_url}} style={styles.actor_image} />
             </View>
           </View>
         </View>

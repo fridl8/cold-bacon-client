@@ -47,12 +47,12 @@ export default class GameStart extends Component {
 				</View>
 				<FadeInView>
 					<View style={styles.startingView}>
-						<ClickableImage text={{uri: 'https://image.tmdb.org/t/p/w185/'+this.state.actors.starting_actor.image_url}} onPress={() => navigate('GameplayScreen', { game_id: this.state.actors.game_id, traceable_id: this.state.actors.starting_actor.id, traceable_type: 'Actor'} )} />
+						<ClickableImage text={{uri: 'https://image.tmdb.org/t/p/w300/'+this.state.actors.starting_actor.image_url}} onPress={() => navigate('GameplayScreen', { game_id: this.state.actors.game_id, traceable_id: this.state.actors.starting_actor.id, traceable_type: 'Actor'} )} />
 					</View>
 				</FadeInView>
 				<FadeInView>
 					<View style={styles.endingView}>
-						<Image source={{uri: 'https://image.tmdb.org/t/p/w185/'+this.state.actors.ending_actor.image_url}} style={styles.image} resizeMode='contain'/>
+						<Image source={{uri: 'https://image.tmdb.org/t/p/w300/'+this.state.actors.ending_actor.image_url}} style={styles.image}/>
 					</View>
 				</FadeInView>
 					<View>

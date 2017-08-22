@@ -18,12 +18,10 @@ export default class ClickableImage extends Component {
       <View>
         <FadeInView>
           <TouchableOpacity style={styles.touchableSize} activeOpacity={.85} onPress={this.props.onPress}>
-              <Image style={styles.image} source={this.props.text} resizeMode='contain' />
+              <Image style={styles.image} source={this.props.text} />
           </TouchableOpacity>
         </FadeInView>
       </View>
     )
   }
 }
-
-// style={styles.image}
