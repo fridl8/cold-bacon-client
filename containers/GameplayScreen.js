@@ -54,12 +54,9 @@ export default class GameplayScreen extends Component {
       const { navigate } = this.props.navigation;
       return (
         <View>
-        <View>
-          <ResultsButton text='To Results' onPress={() => navigate('ResultsScreen', { game_id: this.state.pathInfo.game_id } )} />
-        </View>
-        <View>
-        <Text>{this.state.pathInfo.game_id}</Text>
-        </View>
+          <View>
+            <ResultsButton text='To Results' onPress={() => navigate('ResultsScreen', { game_id: this.state.pathInfo.game_id } )} />
+          </View>
         </View>
       )
     }
