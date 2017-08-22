@@ -4,9 +4,9 @@ import styles from './styles/GameplayScreenStyle';
 import ClickablePath from '../components/ClickablePath';
 import { StackNagivator } from 'react-navigation';
 import GameStart from './GameStart';
-import RestartButton from '../components/RestartButton';
+import GeneralButton from '../components/GeneralButton';
+import buttonStyles from '../components/styles/ButtonStyle';
 import LaunchScreen from './LaunchScreen';
-import ResultsButton from '../components/ResultsButton';
 
 export default class GameplayScreen extends Component {
   constructor(props) {
@@ -55,7 +55,7 @@ export default class GameplayScreen extends Component {
       return (
         <View>
           <View>
-            <ResultsButton text='To Results' onPress={() => navigate('ResultsScreen', { game_id: this.state.pathInfo.game_id } )} />
+            <GeneralButton text='To Results' textStyle={buttonStyles.generalButtonText} touchStyle={buttonStyles.generalButton} onPress={() => navigate('ResultsScreen', { game_id: this.state.pathInfo.game_id } )} />
           </View>
         </View>
       )
