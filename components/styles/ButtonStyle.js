@@ -21,5 +21,8 @@ export default StyleSheet.create({
 		backgroundColor: 'black',
 		justifyContent: 'center',
 		top: Dimensions.get('window').height / 4
+	},
+	endGameButton: {
+
 	}
 });
