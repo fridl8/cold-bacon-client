@@ -12,12 +12,12 @@ export default class StartButton extends Component {
 		navigation: PropTypes.object
 	}
 
-	getText () {
+	getText() {
 		const buttonText = this.props.text || this.props.children || ''
 		return buttonText.toUpperCase()
 	}
 
-	render () {
+	render() {
 		return (
 			<FadeInView>
 				<TouchableOpacity style={styles.button} onPress={this.props.onPress}>
