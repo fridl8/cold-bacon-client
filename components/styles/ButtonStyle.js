@@ -23,6 +23,30 @@ export default StyleSheet.create({
 		top: Dimensions.get('window').height / 4
 	},
 	endGameButton: {
-
+		height: 22,
+		width: 85,
+		backgroundColor: 'black',
+		justifyContent: 'center',
+		borderRadius: 5,
+		marginRight: 2,
+	},
+	endGameText: {
+		color: 'white',
+		textAlign: 'center',
+		fontSize: 10,
+		fontWeight: 'bold',
+	},
+	backButton: {
+		height: 22,
+		width: 85,
+		backgroundColor: 'black',
+		justifyContent: 'center',
+		borderRadius: 5,
+	},
+	backText: {
+		color: 'white',
+		textAlign: 'center',
+		fontSize: 10,
+		fontWeight: 'bold',
 	}
 });
