@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, Image, View } from 'react-native';
+import { Text, Image, View, FlatList } from 'react-native';
 import styles from './styles/ResultsScreenStyle';
 import { StackNagivator } from 'react-navigation';
 import GeneralButton from '../components/GeneralButton';
@@ -22,10 +22,26 @@ export default class ResultsScreen extends Component {
         isLoading: false,
         pathsObject: responseJson,
       })
+      console.log(this.state.pathsObject);
     })
     .catch((error) => {
       console.error(error);
     })
+  }
+
+  renderItem({ item }) {
+    return (
+      <Text>{item.name}</Text>
+    );
+  }
+
+  renderRestartButton() {
+    const { navigate } = this.props.navigation;
+    return (
+      <View>
+        <GeneralButton text='Main Menu' textStyle={ buttonStyles.generalButtonText } touchStyle={ buttonStyles.restartButton } onPress={ () => navigate('LaunchScreen') } />
+      </View>
+    );
   }
 
   render() {
@@ -37,20 +53,16 @@ export default class ResultsScreen extends Component {
       )
     }
 
-    const { navigate } = this.props.navigation;
       return (
         <View style={styles.endingPaths}>
           <View>
-            {
-              this.state.pathsObject.paths_chosen.map(function(path, index) {
-                return (
-                  <Text key={index}>{path.name}</Text>
-                )
-              })
-            }
-          </View>
-          <View>
-            <GeneralButton text='Restart' textStyle={buttonStyles.generalButtonText} touchStyle={buttonStyles.generalButton} onPress={() => navigate('LaunchScreen')} />
+            <FlatList
+              key={'PathsTaken'}
+              data={ this.state.pathsObject.paths_chosen }
+              renderItem={ this.renderItem }
+              keyExtractor={ item => item.id }
+              ListHeaderComponent={ this.renderRestartButton.bind(this) }
+            />
           </View>
         </View>
       )

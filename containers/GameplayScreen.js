@@ -65,7 +65,7 @@ export default class GameplayScreen extends Component {
           <View style={styles.path}>
             {
               this.state.pathInfo.possible_paths.map(function(possible_path, index) {
-                if ((possible_path.traceable.id === responseObject.ending_traceable.id) && (possible_path.traceable.traceable_type === responseObject.ending_traceable.traceable_type)) {
+                if ((possible_path.traceable.id === responseObject.ending_traceable.id) && (possible_path.current_traceable === responseObject.ending_traceable.traceable_type)) {
                   return (
                     <ClickableImage key={index} text={{uri: 'https://image.tmdb.org/t/p/w185/'+possible_path.traceable.image_url}} imageStyle={clickableStyles.finalPathImage} touchStyle={clickableStyles.pathTouchable} onPress={() => navigate('ResultsScreen', { game_id: responseObject.game_id } )} />
                   )
@@ -85,8 +85,8 @@ export default class GameplayScreen extends Component {
           </View>
         </View>
         <View style={styles.buttonView}>
-          <GeneralButton text='Back' textStyle={buttonStyles.backText} touchStyle={buttonStyles.backButton} onPress={() => navigate('ResultsScreen', { game_id: this.state.pathInfo.game_id } )} />
-          <GeneralButton text='End Game' textStyle={buttonStyles.endGameText} touchStyle={buttonStyles.endGameButton} onPress={() => navigate('LaunchScreen')} />
+          <Text></Text>
+          <GeneralButton text='Give Up' textStyle={buttonStyles.endGameText} touchStyle={buttonStyles.endGameButton} onPress={() => navigate('LaunchScreen')} />
         </View>
       </View>
     )
