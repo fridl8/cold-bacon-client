@@ -48,5 +48,13 @@ export default StyleSheet.create({
 		textAlign: 'center',
 		fontSize: 10,
 		fontWeight: 'bold',
+	},
+	restartButton: {
+		height: 60,
+		borderRadius: 5,
+		marginHorizontal: 20,
+		backgroundColor: 'black',
+		justifyContent: 'center',
+		marginTop: Dimensions.get('window').height / 16,
 	}
 });
