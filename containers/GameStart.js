@@ -4,6 +4,27 @@ import styles from './styles/GameStartStyle';
 import ClickableImage from '../components/ClickableImage';
 import { StackNagivator } from 'react-navigation';
 import FadeInView from '../animations/FadeInView';
+import Svg, { Line } from 'react-native-svg';
+
+// class VerticalLine extends Component {
+//     render() {
+//         return (
+//         	<Svg
+// 				    height="100"
+// 				    width="100"
+// 					>
+// 				    <Line
+// 			        x1="0"
+// 			        y1="0"
+// 			        x2="100"
+// 			        y2="100"
+// 			        stroke="red"
+// 			        strokeWidth="2"
+// 				    />
+// 				</Svg>
+// 				);
+//     }
+// }
 
 export default class GameStart extends Component {
 	constructor(props) {

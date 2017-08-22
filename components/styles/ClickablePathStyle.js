@@ -17,6 +17,7 @@ export default StyleSheet.create({
     height: 90,
     backgroundColor:'black',
     borderRadius: 45,
-    resizeMode: 'contain'
+    resizeMode: 'contain',
+    // resizeMode: 'cover'
   }
 });

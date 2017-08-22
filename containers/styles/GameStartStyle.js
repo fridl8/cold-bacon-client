@@ -20,14 +20,17 @@ export default StyleSheet.create({
     borderColor:'#c0c0c0',
     alignItems:'center',
     justifyContent:'center',
-    width: 180,
+    // width: 180,
+    width: 120,
     height:180,
     backgroundColor:'white',
-    borderRadius: 90,
-    resizeMode: 'cover'
+    // borderRadius: 90,
+    borderRadius: 54,
+    // resizeMode: 'cover',
+    resizeMode: 'contain'
   },
   start_name: {
-    top: 20,
+    top: 22,
     fontFamily: 'Montserrat Subrayada',
     fontSize: 25,
     textAlign: 'center',
