@@ -29,7 +29,7 @@ export default class ResultsScreen extends Component {
     })
   }
 
-  renderItem({ item, index }) {
+  renderItem({ item }) {
     return (
       <Text>{item.name}</Text>
     );
@@ -38,7 +38,7 @@ export default class ResultsScreen extends Component {
   renderRestartButton() {
     return (
       <View>
-        <GeneralButton text='Restart' textStyle={ buttonStyles.generalButtonText } touchStyle={ buttonStyles.generalButton } onPress={ () => navigate('LaunchScreen') } />
+        <GeneralButton text='Main Menu' textStyle={ buttonStyles.generalButtonText } touchStyle={ buttonStyles.restartButton } onPress={ () => navigate('LaunchScreen') } />
       </View>
     );
   }
@@ -62,9 +62,6 @@ export default class ResultsScreen extends Component {
               renderItem={ this.renderItem }
               ListHeaderComponent={this.renderRestartButton}
             />
-          </View>
-          <View>
-            <GeneralButton text='Restart' textStyle={ buttonStyles.generalButtonText } touchStyle={ buttonStyles.generalButton } onPress={ () => navigate('LaunchScreen') } />
           </View>
         </View>
       )
