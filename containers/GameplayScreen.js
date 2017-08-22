@@ -35,7 +35,6 @@ export default class GameplayScreen extends Component {
         isLoading: false,
         pathInfo: responseJson,
       })
-      console.log(this.state.pathInfo);
     })
     .catch((error) => {
       console.error(error)
@@ -51,48 +50,45 @@ export default class GameplayScreen extends Component {
       )
     }
 
-    if (!this.state.isLoading && this.state.pathInfo.game_is_finished === true) {
-      const { navigate } = this.props.navigation;
-      return (
-        <View>
+    const { navigate } = this.props.navigation;
+    let responseObject = this.state.pathInfo;
+    let traceableType = this.props.navigation.state.params.traceable_type;
+    let movieChoices = false;
+    return (
+      <View style={styles.mainContainer}>
+        <View style={styles.startingActorView}>
           <View>
-            <GeneralButton text='To Results' textStyle={buttonStyles.generalButtonText} touchStyle={buttonStyles.generalButton} onPress={() => navigate('ResultsScreen', { game_id: this.state.pathInfo.game_id } )} />
+            <Image source={{uri: 'https://image.tmdb.org/t/p/w185/'+this.state.pathInfo.current_traceable.traceable.image_url}} style={[styles.actor_image, (!responseObject.is_movie) && clickableStyles.movieImage]} />
           </View>
         </View>
-      )
-    }
-    else {
-      const { navigate } = this.props.navigation;
-      let responseObject = this.state.pathInfo;
-      return (
-        <View style={styles.mainContainer}>
-          <View style={styles.startingActorView}>
-            <View>
-              <Image source={{uri: 'https://image.tmdb.org/t/p/w185/'+this.state.pathInfo.current_traceable.traceable.image_url}} style={styles.actor_image} />
-            </View>
-          </View>
-          <View style={styles.pathsView}>
-            <View style={styles.path}>
-              {
-                this.state.pathInfo.possible_paths.map(function(possible_path, index) {
+        <View style={styles.pathsView}>
+          <View style={styles.path}>
+            {
+              this.state.pathInfo.possible_paths.map(function(possible_path, index) {
+                if ((possible_path.traceable.id === responseObject.ending_traceable.id) && (possible_path.traceable.traceable_type === responseObject.ending_traceable.traceable_type)) {
                   return (
-                  <ClickableImage key={index} text={{uri: 'https://image.tmdb.org/t/p/w185/'+possible_path.traceable.image_url}} imageStyle={clickableStyles.pathImage} touchStyle={clickableStyles.pathTouchable} onPress={() => navigate('GameplayScreen', { game_id: responseObject.game_id, traceable_id: possible_path.traceable.id, traceable_type: possible_path.traceable_type} )} />
+                    <ClickableImage key={index} text={{uri: 'https://image.tmdb.org/t/p/w185/'+possible_path.traceable.image_url}} imageStyle={clickableStyles.finalPathImage} touchStyle={clickableStyles.pathTouchable} onPress={() => navigate('ResultsScreen', { game_id: responseObject.game_id } )} />
                   )
-                })
-              }
-            </View>
-          </View>
-          <View style={styles.endingActorView}>
-            <View>
-              <Image source={{uri: 'https://image.tmdb.org/t/p/w185/'+this.state.pathInfo.ending_traceable.image_url}} style={styles.actor_image} />
-            </View>
-          </View>
-          <View style={styles.buttonView}>
-            <GeneralButton text='Back' textStyle={buttonStyles.backText} touchStyle={buttonStyles.backButton} onPress={() => navigate('ResultsScreen', { game_id: this.state.pathInfo.game_id } )} />
-            <GeneralButton text='End Game' textStyle={buttonStyles.endGameText} touchStyle={buttonStyles.endGameButton} onPress={() => navigate('LaunchScreen')} />
+                  }
+                else {
+                  return (
+                    <ClickableImage key={index} text={{uri: 'https://image.tmdb.org/t/p/w185/'+possible_path.traceable.image_url}} imageStyle={[clickableStyles.pathImage, (responseObject.is_movie) && clickableStyles.moviePath]} touchStyle={clickableStyles.pathTouchable} onPress={() => navigate('GameplayScreen', { game_id: responseObject.game_id, traceable_id: possible_path.traceable.id, traceable_type: possible_path.traceable_type} )} />
+                  )
+                }
+              })
+            }
           </View>
         </View>
-      )
-    }
+        <View style={styles.endingActorView}>
+          <View>
+            <Image source={{uri: 'https://image.tmdb.org/t/p/w185/'+this.state.pathInfo.ending_traceable.image_url}} style={styles.actor_image} />
+          </View>
+        </View>
+        <View style={styles.buttonView}>
+          <GeneralButton text='Back' textStyle={buttonStyles.backText} touchStyle={buttonStyles.backButton} onPress={() => navigate('ResultsScreen', { game_id: this.state.pathInfo.game_id } )} />
+          <GeneralButton text='End Game' textStyle={buttonStyles.endGameText} touchStyle={buttonStyles.endGameButton} onPress={() => navigate('LaunchScreen')} />
+        </View>
+      </View>
+    )
   }
 }
