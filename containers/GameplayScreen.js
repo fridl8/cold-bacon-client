@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Text, Image, View } from 'react-native';
 import styles from './styles/GameplayScreenStyle';
-import ClickablePath from '../components/ClickablePath';
+import ClickableImage from '../components/ClickableImage';
+import clickableStyles from '../components/styles/ClickableImageStyle';
 import { StackNagivator } from 'react-navigation';
 import GameStart from './GameStart';
 import GeneralButton from '../components/GeneralButton';
@@ -75,7 +76,7 @@ export default class GameplayScreen extends Component {
               {
                 this.state.pathInfo.possible_paths.map(function(possible_path, index) {
                   return (
-                  <ClickablePath key={index} text={{uri: 'https://image.tmdb.org/t/p/w185/'+possible_path.traceable.image_url}} onPress={() => navigate('GameplayScreen', { game_id: responseObject.game_id, traceable_id: possible_path.traceable.id, traceable_type: possible_path.traceable_type} )} />
+                  <ClickableImage key={index} text={{uri: 'https://image.tmdb.org/t/p/w185/'+possible_path.traceable.image_url}} imageStyle={clickableStyles.pathImage} touchStyle={clickableStyles.pathTouchable} onPress={() => navigate('GameplayScreen', { game_id: responseObject.game_id, traceable_id: possible_path.traceable.id, traceable_type: possible_path.traceable_type} )} />
                   )
                 })
               }
