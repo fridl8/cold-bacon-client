@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { Text, Image, View } from 'react-native';
 import styles from './styles/ResultsScreenStyle';
 import { StackNagivator } from 'react-navigation';
-import RestartButton from '../components/RestartButton';
+import GeneralButton from '../components/GeneralButton';
+import buttonStyles from '../components/styles/ButtonStyle';
 import LaunchScreen from './LaunchScreen';
 
 export default class ResultsScreen extends Component {
@@ -49,7 +50,7 @@ export default class ResultsScreen extends Component {
             }
           </View>
           <View>
-            <RestartButton text='Restart' onPress={() => navigate('LaunchScreen')} />
+            <GeneralButton text='Restart' textStyle={buttonStyles.generalButtonText} touchStyle={buttonStyles.generalButton} onPress={() => navigate('LaunchScreen')} />
           </View>
         </View>
       )

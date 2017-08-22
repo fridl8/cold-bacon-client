@@ -4,9 +4,9 @@ import styles from './styles/GameplayScreenStyle';
 import ClickablePath from '../components/ClickablePath';
 import { StackNagivator } from 'react-navigation';
 import GameStart from './GameStart';
-import RestartButton from '../components/RestartButton';
+import GeneralButton from '../components/GeneralButton';
+import buttonStyles from '../components/styles/ButtonStyle';
 import LaunchScreen from './LaunchScreen';
-import ResultsButton from '../components/ResultsButton';
 
 export default class GameplayScreen extends Component {
   constructor(props) {
@@ -55,7 +55,7 @@ export default class GameplayScreen extends Component {
       return (
         <View>
           <View>
-            <ResultsButton text='To Results' onPress={() => navigate('ResultsScreen', { game_id: this.state.pathInfo.game_id } )} />
+            <GeneralButton text='To Results' textStyle={buttonStyles.generalButtonText} touchStyle={buttonStyles.generalButton} onPress={() => navigate('ResultsScreen', { game_id: this.state.pathInfo.game_id } )} />
           </View>
         </View>
       )
@@ -67,7 +67,7 @@ export default class GameplayScreen extends Component {
         <View style={styles.mainContainer}>
           <View style={styles.actorView}>
             <View>
-              <Image source={{uri: 'https://image.tmdb.org/t/p/w300/'+this.state.pathInfo.current_traceable.traceable.image_url}} style={styles.image} />
+              <Image source={{uri: 'https://image.tmdb.org/t/p/w185/'+this.state.pathInfo.current_traceable.traceable.image_url}} style={styles.image} />
             </View>
           </View>
           <View style={styles.pathsView}>
