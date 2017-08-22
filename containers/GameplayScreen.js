@@ -87,6 +87,10 @@ export default class GameplayScreen extends Component {
               <Image source={{uri: 'https://image.tmdb.org/t/p/w185/'+this.state.pathInfo.ending_traceable.image_url}} style={styles.actor_image} />
             </View>
           </View>
+          <View style={styles.buttonView}>
+            <GeneralButton text='Back' textStyle={buttonStyles.backText} touchStyle={buttonStyles.backButton} onPress={() => navigate('ResultsScreen', { game_id: this.state.pathInfo.game_id } )} />
+            <GeneralButton text='End Game' textStyle={buttonStyles.endGameText} touchStyle={buttonStyles.endGameButton} onPress={() => navigate('LaunchScreen')} />
+          </View>
         </View>
       )
     }
