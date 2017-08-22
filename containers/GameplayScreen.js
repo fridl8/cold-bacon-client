@@ -65,9 +65,9 @@ export default class GameplayScreen extends Component {
       let responseObject = this.state.pathInfo;
       return (
         <View style={styles.mainContainer}>
-          <View style={styles.actorView}>
+          <View style={styles.startingActorView}>
             <View>
-              <Image source={{uri: 'https://image.tmdb.org/t/p/w300/'+this.state.pathInfo.current_traceable.traceable.image_url}} style={styles.image} />
+              <Image source={{uri: 'https://image.tmdb.org/t/p/w185/'+this.state.pathInfo.current_traceable.traceable.image_url}} style={styles.actor_image} />
             </View>
           </View>
           <View style={styles.pathsView}>
@@ -81,9 +81,9 @@ export default class GameplayScreen extends Component {
               }
             </View>
           </View>
-          <View style={styles.actorView}>
+          <View style={styles.endingActorView}>
             <View>
-              <Image source={{uri: 'https://image.tmdb.org/t/p/w185/'+this.state.pathInfo.ending_traceable.image_url}} style={styles.image} />
+              <Image source={{uri: 'https://image.tmdb.org/t/p/w185/'+this.state.pathInfo.ending_traceable.image_url}} style={styles.actor_image} />
             </View>
           </View>
         </View>
