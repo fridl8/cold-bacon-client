@@ -4,7 +4,7 @@ export default StyleSheet.create({
 	button: {
 		height: 60,
 		borderRadius: 5,
-		marginHorizontal: 5,
+		marginHorizontal: 20,
 		backgroundColor: 'black',
 		justifyContent: 'center',
 		top: Dimensions.get('window').height / 4
