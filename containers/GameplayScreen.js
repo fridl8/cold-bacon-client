@@ -86,7 +86,7 @@ export default class GameplayScreen extends Component {
         </View>
         <View style={styles.buttonView}>
           <Text></Text>
-          <GeneralButton text='End Game' textStyle={buttonStyles.endGameText} touchStyle={buttonStyles.endGameButton} onPress={() => navigate('LaunchScreen')} />
+          <GeneralButton text='Give Up' textStyle={buttonStyles.endGameText} touchStyle={buttonStyles.endGameButton} onPress={() => navigate('LaunchScreen')} />
         </View>
       </View>
     )
