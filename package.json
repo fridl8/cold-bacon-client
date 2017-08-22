@@ -10,6 +10,7 @@
 		"prop-types": "^15.5.10",
 		"react": "16.0.0-alpha.12",
 		"react-native": "0.47.1",
+		"react-native-animatable": "^1.2.3",
 		"react-navigation": "^1.0.0-beta.11"
 	},
 	"devDependencies": {
@@ -21,13 +22,18 @@
 	"jest": {
 		"preset": "react-native",
 		"setupFiles": [
-			"./__tests__/setup.js" ],
+			"./__tests__/setup.js"
+		],
 		"transform": {
-			"^.+\\.js$": "babel-jest" },
+			"^.+\\.js$": "babel-jest"
+		},
 		"testPathIgnorePatterns": [
-			"/node_modules", "__tests__/.*sum.*"],
+			"/node_modules",
+			"__tests__/.*sum.*"
+		],
 		"transformIgnorePatterns": [
-    	"node_modules/(?!react-native|react-navigation)/" ]
+			"node_modules/(?!react-native|react-navigation)/"
+		]
 	},
 	"rnpm": {
 		"assets": [
