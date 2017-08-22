@@ -38,5 +38,45 @@ export default StyleSheet.create({
     borderRadius: 45,
     // resizeMode: 'contain',
     resizeMode: 'cover'
-  }
+  },
+  finalPathImage: {
+    borderWidth:1,
+    borderColor:'#00ff00',
+    alignItems:'center',
+    justifyContent:'center',
+    width: 90,
+    height: 90,
+    backgroundColor:'black',
+    borderRadius: 45,
+    // resizeMode: 'contain',
+    resizeMode: 'cover'
+  },
+  movieImage: {
+    borderWidth:1,
+    borderColor:'#c0c0c0',
+    alignItems:'center',
+    justifyContent:'center',
+    // width: 180,
+    width: 120,
+    height:180,
+    backgroundColor:'white',
+    // borderRadius: 90,
+    borderRadius: 54,
+    // resizeMode: 'cover',
+    resizeMode: 'contain'
+  },
+  moviePath: {
+    borderWidth:1,
+    borderColor:'#c0c0c0',
+    alignItems:'center',
+    justifyContent:'center',
+    // width: 180,
+    width: 120,
+    height:180,
+    backgroundColor:'white',
+    // borderRadius: 90,
+    borderRadius: 54,
+    // resizeMode: 'cover',
+    resizeMode: 'contain'
+  },
 });
