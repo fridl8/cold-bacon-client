@@ -19,9 +19,19 @@
 		"react-test-renderer": "16.0.0-alpha.12"
 	},
 	"jest": {
-		"preset": "react-native"
+		"preset": "react-native",
+		"setupFiles": [
+			"./__tests__/setup.js" ],
+		"transform": {
+			"^.+\\.js$": "babel-jest" },
+		"testPathIgnorePatterns": [
+			"/node_modules", "__tests__/.*sum.*"],
+		"transformIgnorePatterns": [
+    	"node_modules/(?!react-native|react-navigation)/" ]
 	},
 	"rnpm": {
-		"assets": ["./assets/fonts"]
+		"assets": [
+			"./assets/fonts"
+		]
 	}
 }
