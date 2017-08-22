@@ -1,3 +1,9 @@
 {
-  "presets": ["react-native"]
+  "presets": ["react-native"],
+  "env": {
+      "test": {
+        "presets": ["react-native"],
+        "plugins": ["transform-es2015-modules-commonjs"]
+      }
+   }
 }
