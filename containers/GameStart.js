@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Text, View, Image, Animated } from 'react-native';
 import styles from './styles/GameStartStyle';
 import ClickableImage from '../components/ClickableImage';
+import clickableStyles from '../components/styles/ClickableImageStyle'
 import { StackNagivator } from 'react-navigation';
 import FadeInView from '../animations/FadeInView';
 import Svg, { Line } from 'react-native-svg';
@@ -68,7 +69,7 @@ export default class GameStart extends Component {
 				</View>
 				<FadeInView>
 					<View style={styles.startingView}>
-						<ClickableImage text={{uri: 'https://image.tmdb.org/t/p/w185/'+this.state.actors.starting_actor.image_url}} onPress={() => navigate('GameplayScreen', { game_id: this.state.actors.game_id, traceable_id: this.state.actors.starting_actor.id, traceable_type: 'Actor'} )} />
+						<ClickableImage text={{uri: 'https://image.tmdb.org/t/p/w185/'+this.state.actors.starting_actor.image_url}} imageStyle={clickableStyles.startImage} touchStyle={clickableStyles.startTouchable} onPress={() => navigate('GameplayScreen', { game_id: this.state.actors.game_id, traceable_id: this.state.actors.starting_actor.id, traceable_type: 'Actor'} )} />
 					</View>
 				</FadeInView>
 				<FadeInView>

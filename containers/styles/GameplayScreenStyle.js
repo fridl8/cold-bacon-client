@@ -28,7 +28,7 @@ export default StyleSheet.create({
   },
   endingActorView: {
     flex: 1.2,
-    flexDirection: 'column',
+    flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
     // borderWidth: 1,
@@ -48,5 +48,10 @@ export default StyleSheet.create({
   },
   endingPaths: {
     marginTop: Dimensions.get('window').height / 2,
+  },
+  buttonView: {
+    flex: .11,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
   }
 })
