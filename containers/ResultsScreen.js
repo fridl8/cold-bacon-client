@@ -36,6 +36,7 @@ export default class ResultsScreen extends Component {
   }
 
   renderRestartButton() {
+    const { navigate } = this.props.navigation;
     return (
       <View>
         <GeneralButton text='Main Menu' textStyle={ buttonStyles.generalButtonText } touchStyle={ buttonStyles.restartButton } onPress={ () => navigate('LaunchScreen') } />
@@ -52,7 +53,6 @@ export default class ResultsScreen extends Component {
       )
     }
 
-    const { navigate } = this.props.navigation;
       return (
         <View style={styles.endingPaths}>
           <View>
@@ -60,7 +60,8 @@ export default class ResultsScreen extends Component {
               key={'PathsTaken'}
               data={ this.state.pathsObject.paths_chosen }
               renderItem={ this.renderItem }
-              ListHeaderComponent={this.renderRestartButton}
+              keyExtractor={ item => item.id }
+              ListHeaderComponent={ this.renderRestartButton.bind(this) }
             />
           </View>
         </View>
