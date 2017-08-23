@@ -31,15 +31,15 @@ export default class ResultsScreen extends Component {
 
   renderItem({ item }) {
     return (
-      <Text>{item.name}</Text>
+      <Text style={styles.resultText}>{item.name}</Text>
     );
   }
 
   renderRestartButton() {
     const { navigate } = this.props.navigation;
     return (
-      <View>
-        <GeneralButton text='Main Menu' textStyle={ buttonStyles.generalButtonText } touchStyle={ buttonStyles.restartButton } onPress={ () => navigate('LaunchScreen') } />
+      <View style={styles.buttonView}>
+        <GeneralButton text='Main Menu' textStyle={ buttonStyles.generalButtonText } touchStyle={ buttonStyles.mainMenu } onPress={ () => navigate('LaunchScreen') } />
       </View>
     );
   }

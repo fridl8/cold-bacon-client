@@ -49,12 +49,19 @@ export default StyleSheet.create({
 		fontSize: 10,
 		fontWeight: 'bold',
 	},
-	restartButton: {
-		height: 60,
+	mainMenu: {
+		height: 35,
 		borderRadius: 5,
 		marginHorizontal: 20,
 		backgroundColor: 'black',
 		justifyContent: 'center',
-		marginTop: Dimensions.get('window').height / 16,
+		marginTop: Dimensions.get('window').height / 25,
+	}, 
+	demoButton: {
+		height: 40,
+		marginHorizontal: 60,
+		backgroundColor: 'black',
+		justifyContent: 'center',
+		borderRadius: 5,
 	}
 });

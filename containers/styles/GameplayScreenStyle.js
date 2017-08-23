@@ -20,14 +20,14 @@ export default StyleSheet.create({
     resizeMode: 'cover'
   },
   startingActorView: {
-    flex: 1.2,
+    flex: 1.5,
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
     // borderWidth: 1,
   },
   endingActorView: {
-    flex: 1.2,
+    flex: 1.5,
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
@@ -45,9 +45,6 @@ export default StyleSheet.create({
     justifyContent: 'space-around',
     padding: 35,
     // alignItems: 'flex-start',
-  },
-  endingPaths: {
-    marginTop: Dimensions.get('window').height / 2,
   },
   buttonView: {
     flex: .11,

@@ -8,7 +8,9 @@ import GameStart from './GameStart';
 import GeneralButton from '../components/GeneralButton';
 import buttonStyles from '../components/styles/ButtonStyle';
 import LaunchScreen from './LaunchScreen';
+import * as Animatable from 'react-native-animatable';
 import DropdownAlert from 'react-native-dropdownalert';
+
 
 export default class GameplayScreen extends Component {
   constructor(props) {
@@ -70,7 +72,9 @@ export default class GameplayScreen extends Component {
               responseObject.possible_paths.map(function(possible_path, index) {
                 if ((possible_path.traceable.id === responseObject.ending_traceable.traceable.id) && (possible_path.traceable_type === responseObject.ending_traceable.traceable_type)) {
                   return (
-                    <ClickableImage key={index} text={{uri: 'https://image.tmdb.org/t/p/w185/'+possible_path.traceable.image_url}} imageStyle={clickableStyles.finalPathImage} touchStyle={clickableStyles.pathTouchable} onPress={() => navigate('ResultsScreen', { game_id: responseObject.game_id } )} />
+                    <Animatable.Image key={index} animation="pulse" iterationCount="infinite" style={styles.pulse_image}>
+                      <ClickableImage text={{uri: 'https://image.tmdb.org/t/p/w185/'+possible_path.traceable.image_url}} imageStyle={clickableStyles.finalPathImage} touchStyle={clickableStyles.pathTouchable} onPress={() => navigate('ResultsScreen', { game_id: responseObject.game_id } )} />
+                    </Animatable.Image>
                   )
                   }
                 else {
