@@ -1,21 +1,25 @@
 import { StyleSheet, Dimensions } from 'react-native';
 
 export default StyleSheet.create({
-  result_text: {
+  resultText: {
     fontFamily: 'Cabin Sketch',
     textAlign: 'center',
     fontSize: 25,
   },
-  starting_image: {
+  startingImage: {
     marginTop: 20,
     resizeMode: 'cover',
     height: Dimensions.get('window').height,
     width: Dimensions.get('window').width,
   },
-  ending_image: {
+  endingImage: {
 
   },
   endingPaths: {
     marginTop: 10,
   },
+  buttonView: {
+    // flex: 1,
+    // justifyContent: 'center',
+  }
 });
