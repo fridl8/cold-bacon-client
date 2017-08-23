@@ -37,7 +37,7 @@ export default StyleSheet.create({
     resizeMode: 'cover'
   },
   finalPathImage: {
-    borderWidth:1,
+    borderWidth:2,
     borderColor:'#00ff00',
     alignItems:'center',
     justifyContent:'center',
