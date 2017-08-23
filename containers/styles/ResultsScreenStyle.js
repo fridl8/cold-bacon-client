@@ -2,24 +2,29 @@ import { StyleSheet, Dimensions } from 'react-native';
 
 export default StyleSheet.create({
   resultText: {
-    fontFamily: 'Cabin Sketch',
+    fontFamily: 'Zilla Slab Highlight',
     textAlign: 'center',
     fontSize: 25,
+    marginTop: 2,
   },
   startingImage: {
-    marginTop: 20,
-    resizeMode: 'cover',
-    height: Dimensions.get('window').height,
-    width: Dimensions.get('window').width,
+    // insert here
   },
   endingImage: {
-
+    // insert here
   },
   endingPaths: {
-    marginTop: 10,
   },
   buttonView: {
-    // flex: 1,
-    // justifyContent: 'center',
-  }
+  },
+  baconNumberBox: {
+    marginTop: 30,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  baconNumberText: {
+    fontFamily: 'Allura',
+    fontSize: 100,
+    textAlign: 'center',
+  },
 });

@@ -55,7 +55,7 @@ export default StyleSheet.create({
 		marginHorizontal: 20,
 		backgroundColor: 'black',
 		justifyContent: 'center',
-		marginTop: Dimensions.get('window').height / 25,
+		marginBottom: 20,
 	},
 	demoButton: {
 		height: 140,
