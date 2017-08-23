@@ -2,11 +2,11 @@ import { StyleSheet, Dimensions } from 'react-native';
 
 export default StyleSheet.create({
   startingView: {
-    marginBottom: Dimensions.get('window').height / 20,
+    marginBottom: Dimensions.get('window').height / 30,
     // marginTop: 10,
   },
   endingView: {
-    marginTop: Dimensions.get('window').height / 20,
+    marginTop: Dimensions.get('window').height / 30,
     // marginBottom: 10,
   },
   viewFlex: {
@@ -17,7 +17,7 @@ export default StyleSheet.create({
     // borderWidth: 1,
   },
   image: {
-    top: 35,
+    top: 20,
     borderWidth:1,
     borderColor:'#c0c0c0',
     // alignItems:'center',
@@ -29,19 +29,19 @@ export default StyleSheet.create({
     resizeMode: 'contain'
   },
   start_name: {
-    bottom: 40,
+    bottom: 20,
     fontFamily: 'Montserrat Subrayada',
     fontSize: 25,
     textAlign: 'center',
   },
   end_name: {
-    top: 40,
+    top: 20,
     fontFamily: 'Montserrat Subrayada',
     fontSize: 25,
     textAlign: 'center',
   },
   pulse_image: {
-    bottom: 35,
+    bottom: 20,
     borderWidth:1,
     borderColor:'#c0c0c0',
     alignItems:'center',
@@ -52,7 +52,14 @@ export default StyleSheet.create({
     borderRadius: 54,
     resizeMode: 'contain'
   },
-  path_text: {
+  mid_path_text: {
+    textAlign: 'center',
+    fontFamily: 'Zilla Slab Highlight',
+    fontSize: 20,
+  },
+  top_path_text: {
+    flex: .2,
+    bottom: 35,
     textAlign: 'center',
     fontFamily: 'Zilla Slab Highlight',
     fontSize: 20,

@@ -65,6 +65,7 @@ export default class GameStart extends Component {
 		const { navigate } = this.props.navigation;
 		return (
 			<View style={styles.viewFlex}>
+				<Text style={styles.top_path_text}> - STARTING WITH -</Text>
 				<View>
 					<Text style={styles.start_name} >{this.state.actors.starting_actor.name}</Text>
 				</View>
@@ -75,7 +76,7 @@ export default class GameStart extends Component {
 						</Animatable.Image>
 					</View>
 				</FadeInView>
-				<Text style={styles.path_text}> - FIND A PATH TO -</Text>
+					<Text style={styles.mid_path_text}> - FIND A PATH TO -</Text>
 				<FadeInView>
 					<View style={styles.endingView}>
 						<Image source={{uri: 'https://image.tmdb.org/t/p/w185/'+this.state.actors.ending_actor.image_url}} style={styles.image}/>
@@ -88,3 +89,5 @@ export default class GameStart extends Component {
 		);
 	}
 }
+
+<Text style={styles.path_text}> - FIND A PATH TO -</Text>
