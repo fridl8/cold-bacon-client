@@ -75,6 +75,7 @@ export default class GameStart extends Component {
 						</Animatable.Image>
 					</View>
 				</FadeInView>
+				<Text style={styles.path_text}> - FIND A PATH TO -</Text>
 				<FadeInView>
 					<View style={styles.endingView}>
 						<Image source={{uri: 'https://image.tmdb.org/t/p/w185/'+this.state.actors.ending_actor.image_url}} style={styles.image}/>
