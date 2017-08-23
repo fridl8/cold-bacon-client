@@ -8,6 +8,7 @@ import GameStart from './GameStart';
 import GeneralButton from '../components/GeneralButton';
 import buttonStyles from '../components/styles/ButtonStyle';
 import LaunchScreen from './LaunchScreen';
+import * as Animatable from 'react-native-animatable';
 
 export default class GameplayScreen extends Component {
   constructor(props) {
@@ -65,9 +66,11 @@ export default class GameplayScreen extends Component {
           <View style={styles.path}>
             {
               this.state.pathInfo.possible_paths.map(function(possible_path, index) {
-                if ((possible_path.traceable.id === responseObject.ending_traceable.id) && (possible_path.current_traceable === responseObject.ending_traceable.traceable_type)) {
+                if ((possible_path.traceable.id === responseObject.ending_traceable.id) && (possible_path.traceable_type === "Actor")) {
                   return (
-                    <ClickableImage key={index} text={{uri: 'https://image.tmdb.org/t/p/w185/'+possible_path.traceable.image_url}} imageStyle={clickableStyles.finalPathImage} touchStyle={clickableStyles.pathTouchable} onPress={() => navigate('ResultsScreen', { game_id: responseObject.game_id } )} />
+                    <Animatable.Image animation="pulse" easing="ease-out" duractoin="5000" iterationCount="infinite" style={styles.pulse_image}>
+                      <ClickableImage key={index} text={{uri: 'https://image.tmdb.org/t/p/w185/'+possible_path.traceable.image_url}} imageStyle={clickableStyles.finalPathImage} touchStyle={clickableStyles.pathTouchable} onPress={() => navigate('ResultsScreen', { game_id: responseObject.game_id } )} />
+                    </Animatable.Image>
                   )
                   }
                 else {

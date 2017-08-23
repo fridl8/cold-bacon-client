@@ -20,18 +20,18 @@ export default StyleSheet.create({
     resizeMode: 'cover'
   },
   startingActorView: {
-    flex: 1.2,
+    flex: 1.5,
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    // borderWidth: 1,
+    borderWidth: 1,
   },
   endingActorView: {
-    flex: 1.2,
+    flex: 1.5,
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    // borderWidth: 1,
+    borderWidth: 1,
   },
   pathsView: {
     flex: 3,
