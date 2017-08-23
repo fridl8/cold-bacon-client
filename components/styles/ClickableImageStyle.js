@@ -15,16 +15,15 @@ export default StyleSheet.create({
     height:180,
     backgroundColor:'white',
     borderRadius: 54,
-    // resizeMode: 'cover',
     resizeMode: 'contain'
   },
-  pathTouchable: {
-    width: 90,
-    height: 90,
-    alignItems: 'center',
-    justifyContent: 'center',
-    // borderWidth: 1,
-  },
+  // pathTouchable: {
+  //   width: 90,
+  //   height: 90,
+  //   alignItems: 'center',
+  //   justifyContent: 'center',
+  //   // borderWidth: 1,
+  // },
   pathImage: {
     borderWidth:1,
     borderColor:'#c0c0c0',
@@ -34,7 +33,6 @@ export default StyleSheet.create({
     height: 90,
     backgroundColor:'black',
     borderRadius: 45,
-    // resizeMode: 'contain',
     resizeMode: 'cover'
   },
   finalPathImage: {
@@ -46,7 +44,6 @@ export default StyleSheet.create({
     height: 90,
     backgroundColor:'black',
     borderRadius: 45,
-    // resizeMode: 'contain',
     resizeMode: 'cover'
   },
   movieImage: {
@@ -57,10 +54,7 @@ export default StyleSheet.create({
     width: 97.2,
     height:145.8,
     backgroundColor:'white',
-    // borderRadius: 90,
-    // borderRadius: 43.74,
     borderRadius: 15,
-    // resizeMode: 'cover',
     resizeMode: 'contain'
   },
   moviePath: {
@@ -68,13 +62,10 @@ export default StyleSheet.create({
     borderColor:'#c0c0c0',
     alignItems:'center',
     justifyContent:'center',
-    // width: 180,
     width: 72,
     height:108,
     backgroundColor:'white',
-    // borderRadius: 90,
     borderRadius: 10,
-    // resizeMode: 'cover',
     resizeMode: 'contain'
   },
 });
