@@ -31,7 +31,7 @@ export default class ResultsScreen extends Component {
 
   renderItem({ item }) {
     return (
-      <Text>{item.name}</Text>
+      <Text style={styles.result_text}>{item.name}</Text>
     );
   }
 

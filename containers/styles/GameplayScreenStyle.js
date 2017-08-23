@@ -46,9 +46,6 @@ export default StyleSheet.create({
     padding: 35,
     // alignItems: 'flex-start',
   },
-  endingPaths: {
-    marginTop: Dimensions.get('window').height / 2,
-  },
   buttonView: {
     flex: .11,
     flexDirection: 'row',

@@ -8,26 +8,6 @@ import FadeInView from '../animations/FadeInView';
 import Svg, { Line } from 'react-native-svg';
 import * as Animatable from 'react-native-animatable';
 
-// class VerticalLine extends Component {
-//     render() {
-//         return (
-//         	<Svg
-// 				    height="100"
-// 				    width="100"
-// 					>
-// 				    <Line
-// 			        x1="0"
-// 			        y1="0"
-// 			        x2="100"
-// 			        y2="100"
-// 			        stroke="red"
-// 			        strokeWidth="2"
-// 				    />
-// 				</Svg>
-// 				);
-//     }
-// }
-
 export default class GameStart extends Component {
 	constructor(props) {
 		super(props);
