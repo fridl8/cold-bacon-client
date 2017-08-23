@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, Image, View, Alert, Modal } from 'react-native';
+import { Text, Image, View } from 'react-native';
 import styles from './styles/GameplayScreenStyle';
 import ClickableImage from '../components/ClickableImage';
 import clickableStyles from '../components/styles/ClickableImageStyle';
