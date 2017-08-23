@@ -14,7 +14,6 @@ export default class GameplayScreen extends Component {
     super(props);
     this.state = {
       isLoading: true,
-      modalVisible: false,
     }
   }
 
@@ -35,6 +34,7 @@ export default class GameplayScreen extends Component {
       this.setState({
         isLoading: false,
         pathInfo: responseJson,
+        modalVisible: false,
       })
       console.log(this.state.pathInfo);
     })
@@ -74,10 +74,7 @@ export default class GameplayScreen extends Component {
                   }
                 else {
                   return (
-                    <View>
-
                     <ClickableImage key={index} text={{uri: 'https://image.tmdb.org/t/p/w185/'+possible_path.traceable.image_url}} imageStyle={[clickableStyles.pathImage, (responseObject.is_movie) && clickableStyles.moviePath]} touchStyle={clickableStyles.pathTouchable} onPress={() => navigate('GameplayScreen', { game_id: responseObject.game_id, traceable_id: possible_path.traceable.id, traceable_type: possible_path.traceable_type} )} onLongPress={() => Alert.alert(possible_path.traceable.name)} />
-                    </View>
                   )
                 }
               })
