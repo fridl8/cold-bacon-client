@@ -7,10 +7,11 @@ export default class StartButton extends Component {
 	static propTypes = {
 		onPress: PropTypes.func,
 		text: PropTypes.string,
+    demoMode: PropTypes.string,
 		children: PropTypes.string,
 		navigation: PropTypes.object,
 		textStyle: Text.propTypes.style,
-    touchStyle: Text.propTypes.style
+    touchStyle: Text.propTypes.style,
 	}
 
 	getText() {

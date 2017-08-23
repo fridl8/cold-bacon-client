@@ -60,7 +60,7 @@ export default class ResultsScreen extends Component {
               key={'PathsTaken'}
               data={ this.state.pathsObject.paths_chosen }
               renderItem={ this.renderItem }
-              keyExtractor={ item => item.id }
+              keyExtractor={ item => item.id+item.name }
               ListHeaderComponent={ this.renderRestartButton.bind(this) }
             />
           </View>
