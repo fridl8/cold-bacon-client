@@ -73,7 +73,9 @@ export default class ResultsScreen extends Component {
 
   _keyExtractor = (item, index) => item.id + Math.floor(Math.random() * 1000000000);
 
+
   render() {
+    const { navigate } = this.props.navigation;
     if (this.state.isLoading) {
       return (
         <View>
@@ -85,8 +87,7 @@ export default class ResultsScreen extends Component {
       return (
         <View>
           <View style={styles.baconNumberBox}>
-            <Text style={styles.baconNumberTitle}>Your Bacon Number:</Text>
-            <Text style={styles.baconNumberText}>{ this.state.baconNumber }</Text>
+            <Text style={styles.baconNumberText}>{ this.state.baconNumber + String.fromCharCode(176) + '   ' }</Text>
           </View>
           <View style={styles.buttonView}>
             <GeneralButton text='Main Menu' textStyle={ buttonStyles.generalButtonText } touchStyle={ buttonStyles.mainMenu } onPress={ () => navigate('LaunchScreen') } />
