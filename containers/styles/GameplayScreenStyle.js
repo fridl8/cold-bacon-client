@@ -13,21 +13,21 @@ export default StyleSheet.create({
     borderColor:'#c0c0c0',
     alignItems:'center',
     justifyContent:'center',
-    width: 140,
-    height: 140,
+    width: 160,
+    height: 160,
     backgroundColor:'white',
-    borderRadius: 70,
+    borderRadius: 80,
     resizeMode: 'cover'
   },
   startingActorView: {
-    flex: 1.5,
+    flex: 1.6,
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
     // borderWidth: 1,
   },
   endingActorView: {
-    flex: 1.5,
+    flex: 1.6,
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
@@ -43,12 +43,23 @@ export default StyleSheet.create({
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'space-around',
-    padding: 35,
+    padding: 5,
     // alignItems: 'flex-start',
   },
   buttonView: {
     flex: .11,
     flexDirection: 'row',
     justifyContent: 'space-between',
-  }
+  },
+   movieImage: {
+    borderWidth:1,
+    borderColor:'#c0c0c0',
+    alignItems:'center',
+    justifyContent:'center',
+    width: 108.92,
+    height:160.38,
+    backgroundColor:'white',
+    borderRadius: 16.5,
+    resizeMode: 'contain'
+  },
 })
