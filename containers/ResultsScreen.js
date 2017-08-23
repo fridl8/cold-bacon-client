@@ -15,7 +15,7 @@ export default class ResultsScreen extends Component {
   }
 
   componentDidMount() {
-    return fetch('http://localhost:3000/games/'+this.props.navigation.state.params.game_id+'/paths.json')
+    return fetch(herokuAppUrl+'/games/'+this.props.navigation.state.params.game_id+'/paths.json')
     .then((response) => response.json())
     .then((responseJson) => {
       this.setState({
