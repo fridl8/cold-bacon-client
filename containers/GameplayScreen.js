@@ -68,8 +68,8 @@ export default class GameplayScreen extends Component {
               this.state.pathInfo.possible_paths.map(function(possible_path, index) {
                 if ((possible_path.traceable.id === responseObject.ending_traceable.id) && (possible_path.traceable_type === "Actor")) {
                   return (
-                    <Animatable.Image animation="pulse" easing="ease-out" duractoin="5000" iterationCount="infinite" style={styles.pulse_image}>
-                      <ClickableImage key={index} text={{uri: 'https://image.tmdb.org/t/p/w185/'+possible_path.traceable.image_url}} imageStyle={clickableStyles.finalPathImage} touchStyle={clickableStyles.pathTouchable} onPress={() => navigate('ResultsScreen', { game_id: responseObject.game_id } )} />
+                    <Animatable.Image key={index} animation="pulse" iterationCount="infinite" style={styles.pulse_image}>
+                      <ClickableImage text={{uri: 'https://image.tmdb.org/t/p/w185/'+possible_path.traceable.image_url}} imageStyle={clickableStyles.finalPathImage} touchStyle={clickableStyles.pathTouchable} onPress={() => navigate('ResultsScreen', { game_id: responseObject.game_id } )} />
                     </Animatable.Image>
                   )
                   }
