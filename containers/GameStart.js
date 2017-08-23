@@ -89,5 +89,3 @@ export default class GameStart extends Component {
 		);
 	}
 }
-
-<Text style={styles.path_text}> - FIND A PATH TO -</Text>

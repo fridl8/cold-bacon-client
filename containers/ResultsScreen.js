@@ -39,7 +39,7 @@ export default class ResultsScreen extends Component {
     const { navigate } = this.props.navigation;
     return (
       <View>
-        <GeneralButton text='Main Menu' textStyle={ buttonStyles.generalButtonText } touchStyle={ buttonStyles.restartButton } onPress={ () => navigate('LaunchScreen') } />
+        <GeneralButton text='Main Menu' textStyle={ buttonStyles.generalButtonText } touchStyle={ buttonStyles.mainMenu } onPress={ () => navigate('LaunchScreen') } />
       </View>
     );
   }
