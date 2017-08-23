@@ -63,7 +63,7 @@ export default class GameplayScreen extends Component {
       <View style={styles.mainContainer}>
         <View style={styles.startingActorView}>
           <View>
-            <Image source={{uri: 'https://image.tmdb.org/t/p/w185/'+responseObject.current_traceable.traceable.image_url}} style={[styles.actor_image, (!responseObject.is_movie) && clickableStyles.movieImage]} />
+            <Image source={{uri: 'https://image.tmdb.org/t/p/w185/'+responseObject.current_traceable.traceable.image_url}} style={[styles.actor_image, (!responseObject.is_movie) && styles.movieImage]} />
           </View>
         </View>
         <View style={styles.pathsView}>

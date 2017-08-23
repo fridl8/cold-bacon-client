@@ -25,6 +25,7 @@ export default StyleSheet.create({
   //   // borderWidth: 1,
   // },
   pathImage: {
+    marginTop: 5,
     borderWidth:1,
     borderColor:'#c0c0c0',
     alignItems:'center',
@@ -46,26 +47,17 @@ export default StyleSheet.create({
     borderRadius: 45,
     resizeMode: 'cover'
   },
-  movieImage: {
-    borderWidth:1,
-    borderColor:'#c0c0c0',
-    alignItems:'center',
-    justifyContent:'center',
-    width: 97.2,
-    height:145.8,
-    backgroundColor:'white',
-    borderRadius: 15,
-    resizeMode: 'contain'
-  },
   moviePath: {
-    borderWidth:1,
+    marginTop: 5,
+    marginBottom: 5,
+    borderWidth: 1,
     borderColor:'#c0c0c0',
     alignItems:'center',
     justifyContent:'center',
-    width: 72,
-    height:108,
+    width: 83.16,
+    height: 124.74,
     backgroundColor:'white',
-    borderRadius: 10,
+    borderRadius: 11.55,
     resizeMode: 'contain'
   },
 });

@@ -28,7 +28,7 @@ export default StyleSheet.create({
 		backgroundColor: 'black',
 		justifyContent: 'center',
 		borderRadius: 5,
-		marginRight: 2,
+		// marginRight: ,
 	},
 	endGameText: {
 		color: 'white',
