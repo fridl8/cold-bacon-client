@@ -47,6 +47,7 @@ export default class ResultsScreen extends Component {
       this.setState({
         isLoading: false,
         pathsObject: responseJson,
+        baconNumber: ( responseJson.paths_chosen.length - 1 ) / 2,
       })
       console.log(this.state.pathsObject);
     })
@@ -70,6 +71,8 @@ export default class ResultsScreen extends Component {
     );
   }
 
+  _keyExtractor = (item, index) => item.id + Math.floor(Math.random() * 1000000000);
+
   render() {
     if (this.state.isLoading) {
       return (
@@ -80,15 +83,22 @@ export default class ResultsScreen extends Component {
     }
 
       return (
-        <View style={styles.endingPaths}>
-          <View>
-            <FlatList
-              key={'PathsTaken'}
-              data={ this.state.pathsObject.paths_chosen }
-              renderItem={ this.renderItem }
-              keyExtractor={ item => item.id+item.name }
-              ListHeaderComponent={ this.renderRestartButton.bind(this) }
-            />
+        <View>
+          <View style={styles.baconNumberBox}>
+            <Text style={styles.baconNumberTitle}>Your Bacon Number:</Text>
+            <Text style={styles.baconNumberText}>{ this.state.baconNumber }</Text>
+          </View>
+          <View style={styles.buttonView}>
+            <GeneralButton text='Main Menu' textStyle={ buttonStyles.generalButtonText } touchStyle={ buttonStyles.mainMenu } onPress={ () => navigate('LaunchScreen') } />
+          </View>
+          <View style={styles.endingPaths}>
+            <View>
+              <FlatList
+                data={ this.state.pathsObject.paths_chosen }
+                renderItem={ this.renderItem }
+                keyExtractor={ this._keyExtractor }
+              />
+            </View>
           </View>
         </View>
       )
