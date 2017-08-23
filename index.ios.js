@@ -8,7 +8,9 @@ import ResultsScreen from './containers/ResultsScreen';
 
 const Nav = StackNavigator({
   LaunchScreen: { screen: LaunchScreen },
-  GameStart: { screen: GameStart },
+  GameStart: {
+    path: ':create_game_path',
+    screen: GameStart },
   GameplayScreen: {
     path: 'games/:game_id/:traceable_id/:traceable_type',
     screen: GameplayScreen },
