@@ -20,7 +20,7 @@ export default class LaunchScreen extends Component {
           <StartButton text='Start' textStyle={buttonStyles.generalButtonText} touchStyle={buttonStyles.startButton} onPress={() => navigate('GameStart', { create_game_path: '/games' } ) } />
         </View>
         <View>
-          <StartButton text='Demo Mode' textStyle={buttonStyles.generalButtonText} touchStyle={buttonStyles.demoButton} onPress={() => navigate('GameStart', { create_game_path: '/games/create_demo' } ) } />
+          <StartButton text=' ' textStyle={buttonStyles.generalButtonText} touchStyle={buttonStyles.demoButton} onPress={() => navigate('GameStart', { create_game_path: '/games/create_demo' } ) } />
         </View>
       </Image>
     </View>
