@@ -8,6 +8,7 @@ import GameStart from './GameStart';
 import GeneralButton from '../components/GeneralButton';
 import buttonStyles from '../components/styles/ButtonStyle';
 import LaunchScreen from './LaunchScreen';
+import DropdownAlert from 'react-native-dropdownalert';
 
 export default class GameplayScreen extends Component {
   constructor(props) {
@@ -74,10 +75,12 @@ export default class GameplayScreen extends Component {
                   }
                 else {
                   return (
-                    <ClickableImage key={index} text={{uri: 'https://image.tmdb.org/t/p/w185/'+possible_path.traceable.image_url}} imageStyle={[clickableStyles.pathImage, (responseObject.is_movie) && clickableStyles.moviePath]} touchStyle={clickableStyles.pathTouchable} onPress={() => navigate('GameplayScreen', { game_id: responseObject.game_id, traceable_id: possible_path.traceable.id, traceable_type: possible_path.traceable_type} )} onLongPress={() => Alert.alert(possible_path.traceable.name)} />
+                    <View>
+                    <ClickableImage key={index} text={{uri: 'https://image.tmdb.org/t/p/w185/'+possible_path.traceable.image_url}} imageStyle={[clickableStyles.pathImage, (responseObject.is_movie) && clickableStyles.moviePath]} touchStyle={clickableStyles.pathTouchable} onPress={() => navigate('GameplayScreen', { game_id: responseObject.game_id, traceable_id: possible_path.traceable.id, traceable_type: possible_path.traceable_type} )} onLongPress={() => this.showAlert('custom', '', possible_path.traceable.name)} />
+                    </View>
                   )
                 }
-              })
+              }, this)
             }
           </View>
         </View>
@@ -90,7 +93,23 @@ export default class GameplayScreen extends Component {
           <Text></Text>
           <GeneralButton text='Give Up' textStyle={buttonStyles.endGameText} touchStyle={buttonStyles.endGameButton} onPress={() => navigate('LaunchScreen')} />
         </View>
+          <DropdownAlert
+          ref={(ref) => this.dropdown = ref}
+          onClose={(data) => this.onClose(data)}
+          closeInterval={1500}
+          containerStyle={{backgroundColor: 'rgba(255, 255, 255, 0.8)', padding: 0, justifyContent: 'center'}}
+          messageStyle={{color: 'black', textAlign: 'center', paddingBottom: 10}}
+          titleNumOfLines={0}
+          messageNumOfLines={1} />
       </View>
     )
+  }
+
+  showAlert(alertType, title, message) {
+    this.dropdown.alertWithType(alertType, title, message)
+  }
+
+  onClose(data) {
+    console.log(data);
   }
 }
