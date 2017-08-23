@@ -56,5 +56,12 @@ export default StyleSheet.create({
 		backgroundColor: 'black',
 		justifyContent: 'center',
 		marginTop: Dimensions.get('window').height / 25,
+	}, 
+	demoButton: {
+		height: 40,
+		marginHorizontal: 60,
+		backgroundColor: 'black',
+		justifyContent: 'center',
+		borderRadius: 5,
 	}
 });
