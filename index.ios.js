@@ -5,6 +5,7 @@ import GameStart from './containers/GameStart';
 import LaunchScreen from './containers/LaunchScreen';
 import GameplayScreen from './containers/GameplayScreen';
 import ResultsScreen from './containers/ResultsScreen';
+import './global.js';
 
 const Nav = StackNavigator({
   LaunchScreen: { screen: LaunchScreen },
