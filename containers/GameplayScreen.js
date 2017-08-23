@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, Image, View } from 'react-native';
+import { Text, Image, View, Alert, Modal } from 'react-native';
 import styles from './styles/GameplayScreenStyle';
 import ClickableImage from '../components/ClickableImage';
 import clickableStyles from '../components/styles/ClickableImageStyle';
@@ -14,6 +14,7 @@ export default class GameplayScreen extends Component {
     super(props);
     this.state = {
       isLoading: true,
+      modalVisible: false,
     }
   }
 
@@ -35,6 +36,7 @@ export default class GameplayScreen extends Component {
         isLoading: false,
         pathInfo: responseJson,
       })
+      console.log(this.state.pathInfo);
     })
     .catch((error) => {
       console.error(error)
@@ -53,7 +55,7 @@ export default class GameplayScreen extends Component {
     const { navigate } = this.props.navigation;
     let responseObject = this.state.pathInfo;
     let traceableType = this.props.navigation.state.params.traceable_type;
-    let movieChoices = false;
+    let modalVisible = false;
     return (
       <View style={styles.mainContainer}>
         <View style={styles.startingActorView}>
@@ -65,14 +67,17 @@ export default class GameplayScreen extends Component {
           <View style={styles.path}>
             {
               this.state.pathInfo.possible_paths.map(function(possible_path, index) {
-                if ((possible_path.traceable.id === responseObject.ending_traceable.id) && (possible_path.current_traceable === responseObject.ending_traceable.traceable_type)) {
+                if ((possible_path.traceable.id === responseObject.ending_traceable.traceable.id) && (possible_path.current_traceable === responseObject.ending_traceable.traceable_type)) {
                   return (
                     <ClickableImage key={index} text={{uri: 'https://image.tmdb.org/t/p/w185/'+possible_path.traceable.image_url}} imageStyle={clickableStyles.finalPathImage} touchStyle={clickableStyles.pathTouchable} onPress={() => navigate('ResultsScreen', { game_id: responseObject.game_id } )} />
                   )
                   }
                 else {
                   return (
-                    <ClickableImage key={index} text={{uri: 'https://image.tmdb.org/t/p/w185/'+possible_path.traceable.image_url}} imageStyle={[clickableStyles.pathImage, (responseObject.is_movie) && clickableStyles.moviePath]} touchStyle={clickableStyles.pathTouchable} onPress={() => navigate('GameplayScreen', { game_id: responseObject.game_id, traceable_id: possible_path.traceable.id, traceable_type: possible_path.traceable_type} )} />
+                    <View>
+
+                    <ClickableImage key={index} text={{uri: 'https://image.tmdb.org/t/p/w185/'+possible_path.traceable.image_url}} imageStyle={[clickableStyles.pathImage, (responseObject.is_movie) && clickableStyles.moviePath]} touchStyle={clickableStyles.pathTouchable} onPress={() => navigate('GameplayScreen', { game_id: responseObject.game_id, traceable_id: possible_path.traceable.id, traceable_type: possible_path.traceable_type} )} onLongPress={() => Alert.alert(possible_path.traceable.name)} />
+                    </View>
                   )
                 }
               })
@@ -81,7 +86,7 @@ export default class GameplayScreen extends Component {
         </View>
         <View style={styles.endingActorView}>
           <View>
-            <Image source={{uri: 'https://image.tmdb.org/t/p/w185/'+this.state.pathInfo.ending_traceable.image_url}} style={styles.actor_image} />
+            <Image source={{uri: 'https://image.tmdb.org/t/p/w185/'+this.state.pathInfo.ending_traceable.traceable.image_url}} style={styles.actor_image} />
           </View>
         </View>
         <View style={styles.buttonView}>
