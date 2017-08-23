@@ -33,10 +33,13 @@ export default class GameStart extends Component {
 		this.state = {
 			isLoading: true,
 		}
+		console.log(this.props);
 	}
 
+	// this.props.navigation.state.params.create_demo
+
 	componentDidMount() {
-		return fetch('http://localhost:3000/games', {
+		return fetch('http://localhost:3000'+this.props.navigation.state.params.create_game_path, {
 			method: 'POST',
 			headers: {
 				'Accept': 'applicaton/json',

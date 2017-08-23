@@ -17,7 +17,10 @@ export default class LaunchScreen extends Component {
           <Animatable.Text animation="bounceInLeft" style={styles.header}>Cold Bacon</Animatable.Text>
         </View>
         <View>
-          <StartButton text='Start' textStyle={buttonStyles.generalButtonText} touchStyle={buttonStyles.startButton} onPress={() => navigate('GameStart')} />
+          <StartButton text='Start' textStyle={buttonStyles.generalButtonText} touchStyle={buttonStyles.startButton} onPress={() => navigate('GameStart', { create_game_path: '/games' } ) } />
+        </View>
+        <View>
+          <StartButton text='Demo Mode' textStyle={buttonStyles.generalButtonText} touchStyle={buttonStyles.startButton} onPress={() => navigate('GameStart', { create_game_path: '/games/create_demo' } ) } />
         </View>
       </Image>
     </View>
