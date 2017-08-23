@@ -29,13 +29,13 @@ export default StyleSheet.create({
     resizeMode: 'contain'
   },
   start_name: {
-    bottom: 20,
+    bottom: 30,
     fontFamily: 'Montserrat Subrayada',
     fontSize: 25,
     textAlign: 'center',
   },
   end_name: {
-    top: 20,
+    top: 30,
     fontFamily: 'Montserrat Subrayada',
     fontSize: 25,
     textAlign: 'center',
