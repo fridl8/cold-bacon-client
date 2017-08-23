@@ -73,7 +73,7 @@ export default class GameplayScreen extends Component {
                 if ((possible_path.traceable.id === responseObject.ending_traceable.traceable.id) && (possible_path.traceable_type === responseObject.ending_traceable.traceable_type)) {
                   return (
                     <Animatable.Image key={index} animation="pulse" iterationCount="infinite" style={styles.pulse_image}>
-                      <ClickableImage text={{uri: 'https://image.tmdb.org/t/p/w185/'+possible_path.traceable.image_url}} imageStyle={clickableStyles.finalPathImage} touchStyle={clickableStyles.pathTouchable} onPress={() => navigate('ResultsScreen', { game_id: responseObject.game_id } )} />
+                      <ClickableImage text={{uri: 'https://image.tmdb.org/t/p/w185/'+possible_path.traceable.image_url}} imageStyle={clickableStyles.finalPathImage} touchStyle={clickableStyles.pathTouchable} onPress={() => navigate('ResultsScreen', { game_id: responseObject.game_id, traceable_id: possible_path.traceable.id, traceable_type: possible_path.traceable_type } )} />
                     </Animatable.Image>
                   )
                   }

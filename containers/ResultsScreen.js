@@ -14,8 +14,34 @@ export default class ResultsScreen extends Component {
     }
   }
 
+  // componentDidMount() {
+  //   return fetch(serverBaseUrl+'/games/'+this.props.navigation.state.params.game_id+'/paths.json')
+  //   method: 'post',
+  //   .then((response) => response.json())
+  //   .then((responseJson) => {
+  //     this.setState({
+  //       isLoading: false,
+  //       pathsObject: responseJson,
+  //     })
+  //     console.log(this.state.pathsObject);
+  //   })
+  //   .catch((error) => {
+  //     console.error(error);
+  //   })
+  // }
+
   componentDidMount() {
-    return fetch(serverBaseUrl+'/games/'+this.props.navigation.state.params.game_id+'/paths.json')
+    return fetch(serverBaseUrl+'/games/'+this.props.navigation.state.params.game_id+'/paths', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        traceable_type: this.props.navigation.state.params.traceable_type,
+        traceable_id: this.props.navigation.state.params.traceable_id,
+      }),
+    })
     .then((response) => response.json())
     .then((responseJson) => {
       this.setState({
@@ -25,7 +51,7 @@ export default class ResultsScreen extends Component {
       console.log(this.state.pathsObject);
     })
     .catch((error) => {
-      console.error(error);
+      console.error(error)
     })
   }
 

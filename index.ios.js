@@ -16,7 +16,7 @@ const Nav = StackNavigator({
     path: 'games/:game_id/:traceable_id/:traceable_type',
     screen: GameplayScreen },
   ResultsScreen: {
-    path: 'games/:game_id',
+    path: 'games/:game_id/:traceable_id/:traceable_type',
     screen: ResultsScreen },
   }, {
     headerMode: 'none'
