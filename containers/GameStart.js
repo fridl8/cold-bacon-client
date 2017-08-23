@@ -20,7 +20,7 @@ export default class GameStart extends Component {
 	// this.props.navigation.state.params.create_demo
 
 	componentDidMount() {
-		return fetch(herokuAppUrl+this.props.navigation.state.params.create_game_path, {
+		return fetch(serverBaseUrl+this.props.navigation.state.params.create_game_path, {
 			method: 'POST',
 			headers: {
 				'Accept': 'applicaton/json',
