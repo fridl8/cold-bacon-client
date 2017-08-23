@@ -5,10 +5,13 @@ import GameStart from './containers/GameStart';
 import LaunchScreen from './containers/LaunchScreen';
 import GameplayScreen from './containers/GameplayScreen';
 import ResultsScreen from './containers/ResultsScreen';
+import './global.js';
 
 const Nav = StackNavigator({
   LaunchScreen: { screen: LaunchScreen },
-  GameStart: { screen: GameStart },
+  GameStart: {
+    path: ':create_game_path',
+    screen: GameStart },
   GameplayScreen: {
     path: 'games/:game_id/:traceable_id/:traceable_type',
     screen: GameplayScreen },
