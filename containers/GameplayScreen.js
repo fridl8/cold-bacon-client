@@ -21,7 +21,7 @@ export default class GameplayScreen extends Component {
   }
 
   componentDidMount() {
-    return fetch(herokuAppUrl+'/games/'+this.props.navigation.state.params.game_id+'/paths', {
+    return fetch(serverBaseUrl+'/games/'+this.props.navigation.state.params.game_id+'/paths', {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
