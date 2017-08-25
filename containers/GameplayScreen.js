@@ -92,7 +92,7 @@ export default class GameplayScreen extends Component {
         </View>
         <View style={styles.endingActorView}>
           <View>
-            <Image source={{uri: 'https://image.tmdb.org/t/p/w185/'+responseObject.ending_traceable.traceable.image_url}} style={styles.actor_image} />
+            <StaticImage imageSource={{uri: 'https://image.tmdb.org/t/p/w185/'+responseObject.ending_traceable.traceable.image_url}}onLongPress={() => this.showAlert('custom', '', responseObject.ending_traceable.traceable.name)} imageStyle={staticStyles.actor_image} />
           </View>
         </View>
         <View style={styles.buttonView}>
