@@ -9,7 +9,7 @@ export default class ClickableImage extends Component {
   static propTypes = {
     onPress: PropTypes.func,
     onLongPress: PropTypes.func,
-    text: PropTypes.object,
+    imageSource: PropTypes.object,
     children: PropTypes.object,
     navigation: PropTypes.object,
     imageStyle: Image.propTypes.style,
@@ -25,7 +25,7 @@ export default class ClickableImage extends Component {
       <View>
         <FadeInView>
           <TouchableOpacity style={this.props.touchStyle} activeOpacity={.85} onPress={this.props.onPress} onLongPress={this.props.onLongPress}>
-              <Image style={this.props.imageStyle} source={this.props.text} />
+              <Image style={this.props.imageStyle} source={this.props.imageSource} />
           </TouchableOpacity>
         </FadeInView>
       </View>
