@@ -40,4 +40,10 @@ export default StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
   },
+  loadingView: {
+    marginTop: Dimensions.get('window').height / 1.03
+  },
+  loadingText: {
+    fontFamily: 'Faster One'
+  }
 })
