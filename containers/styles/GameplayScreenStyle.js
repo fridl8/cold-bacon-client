@@ -8,17 +8,6 @@ export default StyleSheet.create({
     marginLeft: Dimensions.get('window').width / 60,
     marginTop: Dimensions.get('window').width / 20,
   },
-  actor_image: {
-    borderWidth:1,
-    borderColor:'#c0c0c0',
-    alignItems:'center',
-    justifyContent:'center',
-    width: 160,
-    height: 160,
-    backgroundColor:'white',
-    borderRadius: 80,
-    resizeMode: 'cover'
-  },
   startingActorView: {
     flex: 1.6,
     flexDirection: 'column',
@@ -50,16 +39,5 @@ export default StyleSheet.create({
     flex: .11,
     flexDirection: 'row',
     justifyContent: 'space-between',
-  },
-   movieImage: {
-    borderWidth:1,
-    borderColor:'#c0c0c0',
-    alignItems:'center',
-    justifyContent:'center',
-    width: 108.92,
-    height:160.38,
-    backgroundColor:'white',
-    borderRadius: 16.5,
-    resizeMode: 'contain'
   },
 })

@@ -55,7 +55,7 @@ export default class GameStart extends Component {
 				<FadeInView>
 					<View style={styles.startingView}>
 					<Animatable.Image animation="pulse" easing="ease-out" duractoin="5000" iterationCount="infinite" style={styles.pulse_image}>
-						<ClickableImage text={{uri: 'https://image.tmdb.org/t/p/w185/'+this.state.actors.starting_actor.image_url}} imageStyle={clickableStyles.startImage} touchStyle={clickableStyles.startTouchable} onPress={() => navigate('GameplayScreen', { game_id: this.state.actors.game_id, traceable_id: this.state.actors.starting_actor.id, traceable_type: 'Actor'} )} />
+						<ClickableImage imageSource={{uri: 'https://image.tmdb.org/t/p/w185/'+this.state.actors.starting_actor.image_url}} imageStyle={clickableStyles.startImage} touchStyle={clickableStyles.startTouchable} onPress={() => navigate('GameplayScreen', { game_id: this.state.actors.game_id, traceable_id: this.state.actors.starting_actor.id, traceable_type: 'Actor'} )} />
 						</Animatable.Image>
 					</View>
 				</FadeInView>

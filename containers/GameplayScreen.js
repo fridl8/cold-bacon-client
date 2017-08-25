@@ -9,6 +9,8 @@ import GeneralButton from '../components/GeneralButton';
 import buttonStyles from '../components/styles/ButtonStyle';
 import LaunchScreen from './LaunchScreen';
 import * as Animatable from 'react-native-animatable';
+import StaticImage from '../components/StaticImage';
+import staticStyles from '../components/styles/StaticImageStyle'
 import DropdownAlert from 'react-native-dropdownalert';
 
 
@@ -57,13 +59,12 @@ export default class GameplayScreen extends Component {
 
     const { navigate } = this.props.navigation;
     let responseObject = this.state.pathInfo;
-    let traceableType = this.props.navigation.state.params.traceable_type;
     let modalVisible = false;
     return (
       <View style={styles.mainContainer}>
         <View style={styles.startingActorView}>
           <View>
-            <Image source={{uri: 'https://image.tmdb.org/t/p/w185/'+responseObject.current_traceable.traceable.image_url}} style={[styles.actor_image, (!responseObject.is_movie) && styles.movieImage]} />
+            <StaticImage imageSource={{uri: 'https://image.tmdb.org/t/p/w185/'+responseObject.current_traceable.traceable.image_url}} onLongPress={() => this.showAlert('custom', '', responseObject.current_traceable.traceable.name)} imageStyle={[staticStyles.actor_image, (!responseObject.is_movie) && staticStyles.movieImage]} />
           </View>
         </View>
         <View style={styles.pathsView}>
@@ -73,14 +74,14 @@ export default class GameplayScreen extends Component {
                 if ((possible_path.traceable.id === responseObject.ending_traceable.traceable.id) && (possible_path.traceable_type === responseObject.ending_traceable.traceable_type)) {
                   return (
                     <Animatable.Image key={index} animation="pulse" iterationCount="infinite" style={styles.pulse_image}>
-                      <ClickableImage text={{uri: 'https://image.tmdb.org/t/p/w185/'+possible_path.traceable.image_url}} imageStyle={clickableStyles.finalPathImage} touchStyle={clickableStyles.pathTouchable} onPress={() => navigate('ResultsScreen', { game_id: responseObject.game_id, traceable_id: possible_path.traceable.id, traceable_type: possible_path.traceable_type } )} />
+                      <ClickableImage imageSource={{uri: 'https://image.tmdb.org/t/p/w185/'+possible_path.traceable.image_url}} imageStyle={clickableStyles.finalPathImage} touchStyle={clickableStyles.pathTouchable} onPress={() => navigate('ResultsScreen', { game_id: responseObject.game_id, traceable_id: possible_path.traceable.id, traceable_type: possible_path.traceable_type } )} />
                     </Animatable.Image>
                   )
                   }
                 else {
                   return (
                     <View key={index}>
-                    <ClickableImage key={index} text={{uri: 'https://image.tmdb.org/t/p/w185/'+possible_path.traceable.image_url}} imageStyle={[clickableStyles.pathImage, (responseObject.is_movie) && clickableStyles.moviePath]} touchStyle={clickableStyles.pathTouchable} onPress={() => navigate('GameplayScreen', { game_id: responseObject.game_id, traceable_id: possible_path.traceable.id, traceable_type: possible_path.traceable_type} )} onLongPress={() => this.showAlert('custom', '', possible_path.traceable.name)} />
+                    <ClickableImage key={index} imageSource={{uri: 'https://image.tmdb.org/t/p/w185/'+possible_path.traceable.image_url}} imageStyle={[clickableStyles.pathImage, (responseObject.is_movie) && clickableStyles.moviePath]} touchStyle={clickableStyles.pathTouchable} onPress={() => navigate('GameplayScreen', { game_id: responseObject.game_id, traceable_id: possible_path.traceable.id, traceable_type: possible_path.traceable_type} )} onLongPress={() => this.showAlert('custom', '', possible_path.traceable.name)} />
                     </View>
                   )
                 }
@@ -90,7 +91,7 @@ export default class GameplayScreen extends Component {
         </View>
         <View style={styles.endingActorView}>
           <View>
-            <Image source={{uri: 'https://image.tmdb.org/t/p/w185/'+responseObject.ending_traceable.traceable.image_url}} style={styles.actor_image} />
+            <StaticImage imageSource={{uri: 'https://image.tmdb.org/t/p/w185/'+responseObject.ending_traceable.traceable.image_url}}onLongPress={() => this.showAlert('custom', '', responseObject.ending_traceable.traceable.name)} imageStyle={staticStyles.actor_image} />
           </View>
         </View>
         <View style={styles.buttonView}>
