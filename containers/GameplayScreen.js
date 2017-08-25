@@ -59,7 +59,6 @@ export default class GameplayScreen extends Component {
 
     const { navigate } = this.props.navigation;
     let responseObject = this.state.pathInfo;
-    let traceableType = this.props.navigation.state.params.traceable_type;
     let modalVisible = false;
     return (
       <View style={styles.mainContainer}>
